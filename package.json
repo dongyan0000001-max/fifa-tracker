@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "build": "node scripts/build-site.js"
+    "build": "node scripts/prepare-data.js && node scripts/build-site.js"
   }
 }
