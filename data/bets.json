@@ -845,36 +845,6 @@
     "homeTeam": "Portugal",
     "awayTeam": "DR Congo",
     "bettor": "URIS",
-    "pick": "1-1",
-    "odds": 11,
-    "stake": 5
-  },
-  {
-    "matchId": "2026-06-18-portugal-vs-dr-congo",
-    "date": "2026-06-18",
-    "homeTeam": "Portugal",
-    "awayTeam": "DR Congo",
-    "bettor": "URIS",
-    "pick": "2-1",
-    "odds": 9.2,
-    "stake": 5
-  },
-  {
-    "matchId": "2026-06-18-portugal-vs-dr-congo",
-    "date": "2026-06-18",
-    "homeTeam": "Portugal",
-    "awayTeam": "DR Congo",
-    "bettor": "URIS",
-    "pick": "0-1",
-    "odds": 24,
-    "stake": 5
-  },
-  {
-    "matchId": "2026-06-18-portugal-vs-dr-congo",
-    "date": "2026-06-18",
-    "homeTeam": "Portugal",
-    "awayTeam": "DR Congo",
-    "bettor": "URIS",
     "pick": "3-1",
     "odds": 10,
     "stake": 10
