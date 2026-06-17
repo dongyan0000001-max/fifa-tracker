@@ -1,0 +1,36 @@
+name: Build FIFA Tracker
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - data/**
+      - scripts/build-site.js
+      - package.json
+      - .github/workflows/build-site.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Build site
+        run: npm run build
+      - name: Commit built pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html calendar.html completed.html ongoing.html matches/ scripts/build-site.js
+          git diff --cached --quiet || git commit -m "Build FIFA tracker pages"
+          git push
