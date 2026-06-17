@@ -12,8 +12,9 @@ patchTeamFlags();
 function mergeExtraBets() {
   const betsPath = path.join(DATA_DIR, "bets.json");
   const baseBets = JSON.parse(fs.readFileSync(betsPath, "utf8"));
-  const allBets = [...baseBets];
-  const seen = new Set(baseBets.map(betKey));
+  const correctedBaseBets = baseBets.filter((bet) => !isWrongPortugalUrisBet(bet));
+  const allBets = [...correctedBaseBets];
+  const seen = new Set(correctedBaseBets.map(betKey));
 
   if (fs.existsSync(EXTRA_BETS_DIR)) {
     for (const fileName of fs.readdirSync(EXTRA_BETS_DIR).sort()) {
@@ -35,6 +36,19 @@ function mergeExtraBets() {
 
   fs.writeFileSync(betsPath, JSON.stringify(allBets, null, 2) + "\n");
   console.log(`Prepared ${allBets.length} total betting entries.`);
+}
+
+function isWrongPortugalUrisBet(bet) {
+  return (
+    bet.matchId === "2026-06-18-portugal-vs-dr-congo" &&
+    bet.bettor === "URIS" &&
+    Number(bet.stake) === 5 &&
+    (
+      (bet.pick === "1-1" && Number(bet.odds) === 11) ||
+      (bet.pick === "2-1" && Number(bet.odds) === 9.2) ||
+      (bet.pick === "0-1" && Number(bet.odds) === 24)
+    )
+  );
 }
 
 function betKey(bet) {
