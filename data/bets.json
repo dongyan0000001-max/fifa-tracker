@@ -1008,5 +1008,35 @@
     "pick": "0-1",
     "odds": 24,
     "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-england-vs-croatia",
+    "date": "2026-06-18",
+    "homeTeam": "England",
+    "awayTeam": "Croatia",
+    "bettor": "URIS",
+    "pick": "1-1",
+    "odds": 6.6,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-england-vs-croatia",
+    "date": "2026-06-18",
+    "homeTeam": "England",
+    "awayTeam": "Croatia",
+    "bettor": "URIS",
+    "pick": "2-1",
+    "odds": 8.7,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-england-vs-croatia",
+    "date": "2026-06-18",
+    "homeTeam": "England",
+    "awayTeam": "Croatia",
+    "bettor": "URIS",
+    "pick": "0-1",
+    "odds": 12,
+    "stake": 5
   }
 ]
