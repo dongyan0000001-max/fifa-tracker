@@ -4,8 +4,8 @@ const path = require("node:path");
 const ROOT_DIR = path.resolve(__dirname, "..");
 const DATA_DIR = path.join(ROOT_DIR, "data");
 const MATCHES_DIR = path.join(ROOT_DIR, "matches");
+const BETTORS_DIR = path.join(ROOT_DIR, "bettors");
 const BETTOR_ORDER = ["Kaizo", "Thomas", "Zac", "Eric", "TSL", "URIS"];
-
 const TEAM_FLAGS = {
   "Mexico": "🇲🇽",
   "South Africa": "🇿🇦",
@@ -46,10 +46,16 @@ build();
 
 function build() {
   fs.mkdirSync(MATCHES_DIR, { recursive: true });
+  fs.mkdirSync(BETTORS_DIR, { recursive: true });
 
   for (const fileName of fs.readdirSync(MATCHES_DIR)) {
     if (fileName.endsWith(".html")) {
       fs.unlinkSync(path.join(MATCHES_DIR, fileName));
+    }
+  }
+  for (const fileName of fs.readdirSync(BETTORS_DIR)) {
+    if (fileName.endsWith(".html")) {
+      fs.unlinkSync(path.join(BETTORS_DIR, fileName));
     }
   }
 
@@ -61,8 +67,11 @@ function build() {
   for (const match of matches) {
     writePage(path.join("matches", match.fileName), renderMatchPage(match));
   }
+  for (const bettor of bettorSummary(allSettledBets())) {
+    writePage(path.join("bettors", bettor.fileName), renderBettorPage(bettor));
+  }
 
-  console.log(`Built ${matches.length} match pages from ${bets.length} betting entries.`);
+  console.log(`Built ${matches.length} match pages and ${BETTOR_ORDER.length} bettor pages from ${bets.length} betting entries.`);
 }
 
 function readJson(fileName) {
@@ -188,9 +197,21 @@ function settleBet(bet, result) {
   };
 }
 
+function allSettledBets() {
+  return matches.flatMap((match) => {
+    const stats = matchStats(match);
+    return stats.settledBets.map((bet) => ({
+      ...bet,
+      matchLabel: stats.label,
+      matchFileName: stats.fileName,
+      resultLabel: stats.resultLabel,
+      statusLabel: stats.statusLabel
+    }));
+  });
+}
+
 function renderIndexPage() {
-  const stats = matches.map(matchStats);
-  const allBets = stats.flatMap((match) => match.settledBets);
+  const allBets = allSettledBets();
   const totalStake = sum(allBets, "stake");
   const totalPayout = sum(allBets, "actualPayout");
   const totalNet = sum(allBets, "net");
@@ -199,7 +220,7 @@ function renderIndexPage() {
   return htmlPage({
     title: "⚽️ FIFA 2026",
     heading: "⚽️ FIFA 2026",
-    subtitle: "Read-only betting tracker for bettors. Final score = Completed. Pending = On Going.",
+    subtitle: "",
     active: "index",
     body: `
 <main>
@@ -214,17 +235,12 @@ function renderIndexPage() {
   <h2 style="margin-top:18px">By Bettor</h2>
   ${bettors.map(renderPerson).join("")}
 </section>
-<section class="card">
-  <h2>Match Pages</h2>
-  <div class="label">Each match opens as a separate HTML page.</div>
-  <div class="match-list" style="margin-top:12px">${stats.map((match) => renderMatchCard(match, true)).join("")}</div>
-</section>
 </main>`
   });
 }
 
 function renderPerson(person) {
-  return `<div class="person"><div><b>${escapeHtml(person.name)}</b><small>${person.entries} entries · ${money(person.stake)} bet · ${money(person.payout)} payout</small></div><strong class="${toneClass(person.net)}">${money(person.net)}</strong></div>`;
+  return `<a class="person" href="bettors/${person.fileName}"><div><b>${escapeHtml(person.name)}</b><small>${person.entries} entries · ${money(person.stake)} bet · ${money(person.payout)} payout</small></div><strong class="${toneClass(person.net)}">${money(person.net)}</strong></a>`;
 }
 
 function bettorSummary(entries) {
@@ -242,9 +258,36 @@ function bettorSummary(entries) {
       entries: bettorBets.length,
       stake: sum(bettorBets, "stake"),
       payout: sum(bettorBets, "actualPayout"),
-      net: sum(bettorBets, "net")
+      net: sum(bettorBets, "net"),
+      fileName: `${slugify(name)}.html`,
+      bets: bettorBets
     };
   });
+}
+
+function renderBettorPage(bettor) {
+  return htmlPage({
+    title: `⚽️ ${bettor.name}`,
+    heading: `⚽️ ${bettor.name}`,
+    subtitle: "",
+    basePath: "../",
+    body: `
+<main>
+<section class="card">
+  <div class="match-head">
+    <div><div class="match-title">${escapeHtml(bettor.name)}</div><div class="match-meta">${bettor.entries} entries · ${money(bettor.stake)} bet · ${money(bettor.payout)} payout</div></div>
+    <div class="${toneClass(bettor.net)}" style="font-size:22px">${money(bettor.net)}</div>
+  </div>
+  <div class="scroll"><table><thead><tr><th>Date</th><th>Match</th><th>Pick</th><th class="num">Rate</th><th class="num">RM Bet</th><th>Result</th><th>Status</th><th class="num">Payout</th><th class="num">Net</th></tr></thead>
+<tbody>${bettor.bets.map(renderBettorBetRow).join("")}<tr class="total"><td>Total</td><td></td><td></td><td></td><td class="num">${money(bettor.stake)}</td><td></td><td></td><td class="num">${money(bettor.payout)}</td><td class="num ${toneClass(bettor.net)}">${money(bettor.net)}</td></tr></tbody></table></div>
+</section>
+<section class="card"><a class="badge" href="../index.html">← Back to Summary</a></section>
+</main>`
+  });
+}
+
+function renderBettorBetRow(bet) {
+  return `<tr><td>${displayDate(bet.date)}</td><td><a href="../matches/${bet.matchFileName}">${escapeHtml(bet.matchLabel)}</a></td><td>${escapeHtml(bet.pick)}</td><td class="num">${odds(bet.odds)}</td><td class="num">${money(bet.stake)}</td><td>${escapeHtml(bet.resultLabel)}</td><td>${escapeHtml(bet.status)}</td><td class="num">${money(bet.actualPayout)}</td><td class="num ${toneClass(bet.net)}">${money(bet.net)}</td></tr>`;
 }
 
 function renderCalendarPage() {
@@ -320,10 +363,11 @@ function renderBetRow(bet) {
 }
 
 function htmlPage({ title, heading, subtitle, active = "", basePath = "", body }) {
+  const subtitleHtml = subtitle ? `<div class="sub">${subtitle}</div>` : "";
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>${escapeHtml(title)}</title><link rel="stylesheet" href="${basePath}assets/style.css"></head>
-<body><section class="hero"><h1>${escapeHtml(heading)}</h1><div class="sub">${subtitle}</div></section>${nav(active, basePath)}${body.startsWith("\n") ? "" : "\n"}${body}</body></html>`;
+<title>${escapeHtml(title)}</title><link rel="icon" type="image/png" href="${basePath}assets/site-icon.png"><link rel="apple-touch-icon" href="${basePath}assets/apple-touch-icon.png"><meta name="apple-mobile-web-app-title" content="FIFA Tracker"><link rel="stylesheet" href="${basePath}assets/style.css"></head>
+<body><section class="hero"><h1>${escapeHtml(heading)}</h1>${subtitleHtml}</section>${nav(active, basePath)}${body.startsWith("\n") ? "" : "\n"}${body}</body></html>`;
 }
 
 function nav(active, basePath) {
