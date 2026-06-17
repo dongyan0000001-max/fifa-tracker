@@ -6,6 +6,37 @@ const DATA_DIR = path.join(ROOT_DIR, "data");
 const MATCHES_DIR = path.join(ROOT_DIR, "matches");
 const BETTOR_ORDER = ["Kaizo", "Thomas", "Zac", "Eric", "TSL", "URIS"];
 
+const TEAM_FLAGS = {
+  "Mexico": "🇲🇽",
+  "South Africa": "🇿🇦",
+  "Czechia": "🇨🇿",
+  "Korea Republic": "🇰🇷",
+  "Canada": "🇨🇦",
+  "Bosnia Herzegovina": "🇧🇦",
+  "USA": "🇺🇸",
+  "Paraguay": "🇵🇾",
+  "Netherlands": "🇳🇱",
+  "Japan": "🇯🇵",
+  "Sweden": "🇸🇪",
+  "Tunisia": "🇹🇳",
+  "Germany": "🇩🇪",
+  "Curaçao": "🇨🇼",
+  "Belgium": "🇧🇪",
+  "Egypt": "🇪🇬",
+  "Spain": "🇪🇸",
+  "Cape Verde": "🇨🇻",
+  "Uruguay": "🇺🇾",
+  "Saudi Arabia": "🇸🇦",
+  "Argentina": "🇦🇷",
+  "Algeria": "🇩🇿",
+  "Norway": "🇳🇴",
+  "Iraq": "🇮🇶",
+  "France": "🇫🇷",
+  "Senegal": "🇸🇳",
+  "Austria": "🇦🇹",
+  "Jordan": "🇯🇴"
+};
+
 const bets = readJson("bets.json");
 const results = readJson("results.json");
 const resultsByMatch = new Map(results.map((result) => [result.matchId, result]));
@@ -75,7 +106,8 @@ function collectMatches(entries) {
   });
 
   for (const match of list) {
-    match.label = `${match.homeTeam} vs ${match.awayTeam}`;
+    match.plainLabel = `${match.homeTeam} vs ${match.awayTeam}`;
+    match.label = matchLabel(match.homeTeam, match.awayTeam);
     match.fileName = `${dateSlug(match.date)}-${slugify(match.homeTeam)}-vs-${slugify(match.awayTeam)}.html`;
   }
 
@@ -303,6 +335,14 @@ function nav(active, basePath) {
   ];
 
   return `<nav class="nav">${items.map(([key, href, label]) => `<a class="${active === key ? "" : "secondary"}" href="${basePath}${href}">${label}</a>`).join("")}</nav>`;
+}
+
+function teamLabel(team) {
+  return `${TEAM_FLAGS[team] || "🏳️"} ${team}`;
+}
+
+function matchLabel(homeTeam, awayTeam) {
+  return `${teamLabel(homeTeam)} vs ${teamLabel(awayTeam)}`;
 }
 
 function displayDate(isoDate) {
