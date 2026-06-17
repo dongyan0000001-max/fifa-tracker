@@ -34,7 +34,11 @@ const TEAM_FLAGS = {
   "France": "🇫🇷",
   "Senegal": "🇸🇳",
   "Austria": "🇦🇹",
-  "Jordan": "🇯🇴"
+  "Jordan": "🇯🇴",
+  "DR Congo": "🇨🇩",
+  "Portugal": "🇵🇹",
+  "Croatia": "🇭🇷",
+  "England": "🏴"
 };
 
 const bets = readJson("bets.json");
