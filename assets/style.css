@@ -65,26 +65,16 @@ body:before{
 .hero:before{
   content:"";
   position:absolute;
-  right:72px;
-  top:42px;
-  width:180px;
-  height:180px;
-  background:url("site-icon.png") center/contain no-repeat;
+  right:58px;
+  top:28px;
+  width:150px;
+  height:210px;
+  background:url("header-logo.png") center/contain no-repeat;
   filter:drop-shadow(0 18px 28px rgba(0,0,0,.65));
   z-index:0;
 }
 .hero:after{
-  content:"2026";
-  position:absolute;
-  right:210px;
-  top:8px;
-  z-index:-1;
-  color:#fff;
-  font-size:182px;
-  line-height:.8;
-  font-weight:1000;
-  letter-spacing:0;
-  opacity:.16;
+  content:none;
 }
 .hero h1,.hero .sub{position:relative;z-index:1}
 .hero h1{
@@ -267,17 +257,15 @@ a{color:inherit}
       var(--black);
   }
   body:before{width:12px}
-  .hero{min-height:190px;padding:24px 134px 18px 26px}
-  .hero:before{right:22px;top:38px;width:92px;height:92px}
-  .hero:after{right:74px;top:16px;font-size:108px}
+  .hero{min-height:190px;padding:24px 132px 18px 26px}
+  .hero:before{right:18px;top:18px;width:96px;height:154px}
   .hero h1{font-size:32px;text-shadow:3px 3px 0 rgba(255,248,107,.42)}
   .hero .sub{font-size:11px;letter-spacing:1.3px}
   .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:430px){
-  .hero{min-height:166px;padding:20px 104px 16px 22px}
-  .hero:before{right:14px;top:40px;width:76px;height:76px}
-  .hero:after{right:54px;top:18px;font-size:86px}
+  .hero{min-height:166px;padding:20px 102px 16px 22px}
+  .hero:before{right:10px;top:20px;width:78px;height:126px}
   .hero h1{font-size:27px}
   .grid{grid-template-columns:1fr}
   .person{grid-template-columns:1fr}
