@@ -25,12 +25,52 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Merge extra bet files
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const dataDir = path.join(process.cwd(), 'data');
+          const extraDir = path.join(dataDir, 'extra-bets');
+          const betsPath = path.join(dataDir, 'bets.json');
+          if (!fs.existsSync(extraDir)) {
+            console.log('No extra-bets folder found.');
+            process.exit(0);
+          }
+          const bets = JSON.parse(fs.readFileSync(betsPath, 'utf8'));
+          const keyOf = (bet) => [bet.matchId, bet.date, bet.homeTeam, bet.awayTeam, bet.bettor, bet.pick, Number(bet.odds), Number(bet.stake)].join('|');
+          const seen = new Set(bets.map(keyOf));
+          let added = 0;
+          for (const file of fs.readdirSync(extraDir).filter((name) => name.endsWith('.json')).sort()) {
+            const extras = JSON.parse(fs.readFileSync(path.join(extraDir, file), 'utf8'));
+            for (const bet of extras) {
+              const normalized = {
+                matchId: bet.matchId,
+                date: bet.date,
+                homeTeam: bet.homeTeam,
+                awayTeam: bet.awayTeam,
+                bettor: bet.bettor,
+                pick: bet.pick,
+                odds: Number(bet.odds),
+                stake: Number(bet.stake)
+              };
+              const key = keyOf(normalized);
+              if (!seen.has(key)) {
+                bets.push(normalized);
+                seen.add(key);
+                added += 1;
+              }
+            }
+          }
+          fs.writeFileSync(betsPath, JSON.stringify(bets, null, 2) + '\n');
+          console.log(`Merged ${added} extra betting entries. Total: ${bets.length}`);
+          NODE
       - name: Build site
         run: npm run build
       - name: Commit built pages
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html calendar.html completed.html ongoing.html matches/ scripts/build-site.js
+          git add data/bets.json index.html calendar.html completed.html ongoing.html matches/ bettors/ scripts/build-site.js
           git diff --cached --quiet || git commit -m "Build FIFA tracker pages"
           git push
