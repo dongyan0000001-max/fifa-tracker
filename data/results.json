@@ -68,5 +68,15 @@
     "matchId": "2026-06-17-austria-vs-jordan",
     "finalScore": "3-1",
     "aos": false
+  },
+  {
+    "matchId": "2026-06-18-portugal-vs-dr-congo",
+    "finalScore": "1-1",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-18-england-vs-croatia",
+    "finalScore": "4-2",
+    "aos": false
   }
 ]
