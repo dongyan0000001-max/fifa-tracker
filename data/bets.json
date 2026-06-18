@@ -1288,5 +1288,35 @@
     "pick": "2-1",
     "odds": 8.8,
     "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-czechia-vs-south-africa",
+    "date": "2026-06-18",
+    "homeTeam": "Czechia",
+    "awayTeam": "South Africa",
+    "bettor": "URIS",
+    "pick": "3-0",
+    "odds": 15,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-czechia-vs-south-africa",
+    "date": "2026-06-18",
+    "homeTeam": "Czechia",
+    "awayTeam": "South Africa",
+    "bettor": "URIS",
+    "pick": "2-1",
+    "odds": 8.3,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-czechia-vs-south-africa",
+    "date": "2026-06-18",
+    "homeTeam": "Czechia",
+    "awayTeam": "South Africa",
+    "bettor": "URIS",
+    "pick": "2-0",
+    "odds": 8.1,
+    "stake": 5
   }
 ]
