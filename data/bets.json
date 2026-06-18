@@ -1008,5 +1008,245 @@
     "pick": "0-1",
     "odds": 12,
     "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-mexico-vs-korea-republic",
+    "date": "2026-06-18",
+    "homeTeam": "Mexico",
+    "awayTeam": "Korea Republic",
+    "bettor": "Zac",
+    "pick": "1H 2-2",
+    "odds": 107,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-mexico-vs-korea-republic",
+    "date": "2026-06-18",
+    "homeTeam": "Mexico",
+    "awayTeam": "Korea Republic",
+    "bettor": "Zac",
+    "pick": "1-2",
+    "odds": 12,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-mexico-vs-korea-republic",
+    "date": "2026-06-18",
+    "homeTeam": "Mexico",
+    "awayTeam": "Korea Republic",
+    "bettor": "Zac",
+    "pick": "2-1",
+    "odds": 8.8,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-canada-vs-qatar",
+    "date": "2026-06-18",
+    "homeTeam": "Canada",
+    "awayTeam": "Qatar",
+    "bettor": "Zac",
+    "pick": "1-1",
+    "odds": 11,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-canada-vs-qatar",
+    "date": "2026-06-18",
+    "homeTeam": "Canada",
+    "awayTeam": "Qatar",
+    "bettor": "Zac",
+    "pick": "0-0",
+    "odds": 14,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-switzerland-vs-bosnia-herzegovina",
+    "date": "2026-06-18",
+    "homeTeam": "Switzerland",
+    "awayTeam": "Bosnia Herzegovina",
+    "bettor": "Zac",
+    "pick": "1-1",
+    "odds": 7.9,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-switzerland-vs-bosnia-herzegovina",
+    "date": "2026-06-18",
+    "homeTeam": "Switzerland",
+    "awayTeam": "Bosnia Herzegovina",
+    "bettor": "Zac",
+    "pick": "2-1",
+    "odds": 7.8,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-switzerland-vs-bosnia-herzegovina",
+    "date": "2026-06-18",
+    "homeTeam": "Switzerland",
+    "awayTeam": "Bosnia Herzegovina",
+    "bettor": "Zac",
+    "pick": "2-0",
+    "odds": 6.9,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-switzerland-vs-bosnia-herzegovina",
+    "date": "2026-06-18",
+    "homeTeam": "Switzerland",
+    "awayTeam": "Bosnia Herzegovina",
+    "bettor": "Zac",
+    "pick": "1-0",
+    "odds": 6.3,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-czechia-vs-south-africa",
+    "date": "2026-06-18",
+    "homeTeam": "Czechia",
+    "awayTeam": "South Africa",
+    "bettor": "Zac",
+    "pick": "1-1",
+    "odds": 6.9,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-czechia-vs-south-africa",
+    "date": "2026-06-18",
+    "homeTeam": "Czechia",
+    "awayTeam": "South Africa",
+    "bettor": "Zac",
+    "pick": "2-1",
+    "odds": 8.3,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-czechia-vs-south-africa",
+    "date": "2026-06-18",
+    "homeTeam": "Czechia",
+    "awayTeam": "South Africa",
+    "bettor": "Zac",
+    "pick": "2-0",
+    "odds": 7.7,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-mexico-vs-korea-republic",
+    "date": "2026-06-18",
+    "homeTeam": "Mexico",
+    "awayTeam": "Korea Republic",
+    "bettor": "Thomas",
+    "pick": "1-2",
+    "odds": 12,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-mexico-vs-korea-republic",
+    "date": "2026-06-18",
+    "homeTeam": "Mexico",
+    "awayTeam": "Korea Republic",
+    "bettor": "Thomas",
+    "pick": "2-1",
+    "odds": 8.8,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-czechia-vs-south-africa",
+    "date": "2026-06-18",
+    "homeTeam": "Czechia",
+    "awayTeam": "South Africa",
+    "bettor": "Thomas",
+    "pick": "2-0",
+    "odds": 7.7,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-mexico-vs-korea-republic",
+    "date": "2026-06-18",
+    "homeTeam": "Mexico",
+    "awayTeam": "Korea Republic",
+    "bettor": "Kaizo",
+    "pick": "2-2",
+    "odds": 16,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-mexico-vs-korea-republic",
+    "date": "2026-06-18",
+    "homeTeam": "Mexico",
+    "awayTeam": "Korea Republic",
+    "bettor": "Kaizo",
+    "pick": "2-4",
+    "odds": 213,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-mexico-vs-korea-republic",
+    "date": "2026-06-18",
+    "homeTeam": "Mexico",
+    "awayTeam": "Korea Republic",
+    "bettor": "Kaizo",
+    "pick": "2-1",
+    "odds": 8.8,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-canada-vs-qatar",
+    "date": "2026-06-18",
+    "homeTeam": "Canada",
+    "awayTeam": "Qatar",
+    "bettor": "Kaizo",
+    "pick": "2-2",
+    "odds": 26,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-canada-vs-qatar",
+    "date": "2026-06-18",
+    "homeTeam": "Canada",
+    "awayTeam": "Qatar",
+    "bettor": "Kaizo",
+    "pick": "2-1",
+    "odds": 8.8,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-switzerland-vs-bosnia-herzegovina",
+    "date": "2026-06-18",
+    "homeTeam": "Switzerland",
+    "awayTeam": "Bosnia Herzegovina",
+    "bettor": "Kaizo",
+    "pick": "2-1",
+    "odds": 7.8,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-switzerland-vs-bosnia-herzegovina",
+    "date": "2026-06-18",
+    "homeTeam": "Switzerland",
+    "awayTeam": "Bosnia Herzegovina",
+    "bettor": "Kaizo",
+    "pick": "2-0",
+    "odds": 6.9,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-czechia-vs-south-africa",
+    "date": "2026-06-18",
+    "homeTeam": "Czechia",
+    "awayTeam": "South Africa",
+    "bettor": "Kaizo",
+    "pick": "1-1",
+    "odds": 6.9,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-18-czechia-vs-south-africa",
+    "date": "2026-06-18",
+    "homeTeam": "Czechia",
+    "awayTeam": "South Africa",
+    "bettor": "Kaizo",
+    "pick": "2-1",
+    "odds": 8.3,
+    "stake": 5
   }
 ]
