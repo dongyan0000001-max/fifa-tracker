@@ -83,5 +83,15 @@
     "matchId": "2026-06-18-czechia-vs-south-africa",
     "finalScore": "1-1",
     "aos": false
+  },
+  {
+    "matchId": "2026-06-18-switzerland-vs-bosnia-herzegovina",
+    "finalScore": "4-1",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-18-canada-vs-qatar",
+    "finalScore": "6-0",
+    "aos": false
   }
 ]
