@@ -1318,5 +1318,95 @@
     "pick": "2-0",
     "odds": 8.1,
     "stake": 5
+  },
+  {
+    "matchId": "2026-06-20-ecuador-vs-curacao",
+    "date": "2026-06-20",
+    "homeTeam": "Ecuador",
+    "awayTeam": "Curaçao",
+    "bettor": "Kaizo",
+    "pick": "3-0",
+    "odds": 5.4,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-20-ecuador-vs-curacao",
+    "date": "2026-06-20",
+    "homeTeam": "Ecuador",
+    "awayTeam": "Curaçao",
+    "bettor": "Kaizo",
+    "pick": "2-1",
+    "odds": 13,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-20-ecuador-vs-curacao",
+    "date": "2026-06-20",
+    "homeTeam": "Ecuador",
+    "awayTeam": "Curaçao",
+    "bettor": "Kaizo",
+    "pick": "2-0",
+    "odds": 5,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-20-germany-vs-ivory-coast",
+    "date": "2026-06-20",
+    "homeTeam": "Germany",
+    "awayTeam": "Ivory Coast",
+    "bettor": "Kaizo",
+    "pick": "3-0",
+    "odds": 11,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-20-germany-vs-ivory-coast",
+    "date": "2026-06-20",
+    "homeTeam": "Germany",
+    "awayTeam": "Ivory Coast",
+    "bettor": "Kaizo",
+    "pick": "4-0",
+    "odds": 19,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-20-germany-vs-ivory-coast",
+    "date": "2026-06-20",
+    "homeTeam": "Germany",
+    "awayTeam": "Ivory Coast",
+    "bettor": "Kaizo",
+    "pick": "2-0",
+    "odds": 8.3,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-20-netherlands-vs-sweden",
+    "date": "2026-06-20",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Sweden",
+    "bettor": "Kaizo",
+    "pick": "2-1",
+    "odds": 8,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-20-netherlands-vs-sweden",
+    "date": "2026-06-20",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Sweden",
+    "bettor": "Kaizo",
+    "pick": "1-1",
+    "odds": 7.9,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-20-netherlands-vs-sweden",
+    "date": "2026-06-20",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Sweden",
+    "bettor": "Kaizo",
+    "pick": "1-2",
+    "odds": 14,
+    "stake": 10
   }
 ]
