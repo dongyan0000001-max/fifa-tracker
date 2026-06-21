@@ -1738,5 +1738,65 @@
     "pick": "2-1",
     "odds": 14,
     "stake": 10
+  },
+  {
+    "matchId": "2026-06-21-spain-vs-saudi-arabia",
+    "date": "2026-06-21",
+    "homeTeam": "Spain",
+    "awayTeam": "Saudi Arabia",
+    "bettor": "URIS",
+    "pick": "2-2",
+    "odds": 46,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-21-spain-vs-saudi-arabia",
+    "date": "2026-06-21",
+    "homeTeam": "Spain",
+    "awayTeam": "Saudi Arabia",
+    "bettor": "URIS",
+    "pick": "4-1",
+    "odds": 14,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-21-spain-vs-saudi-arabia",
+    "date": "2026-06-21",
+    "homeTeam": "Spain",
+    "awayTeam": "Saudi Arabia",
+    "bettor": "URIS",
+    "pick": "4-0",
+    "odds": 6.9,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-21-spain-vs-saudi-arabia",
+    "date": "2026-06-21",
+    "homeTeam": "Spain",
+    "awayTeam": "Saudi Arabia",
+    "bettor": "URIS",
+    "pick": "2-1",
+    "odds": 12,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-21-spain-vs-saudi-arabia",
+    "date": "2026-06-21",
+    "homeTeam": "Spain",
+    "awayTeam": "Saudi Arabia",
+    "bettor": "URIS",
+    "pick": "2-0",
+    "odds": 6.3,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-21-spain-vs-saudi-arabia",
+    "date": "2026-06-21",
+    "homeTeam": "Spain",
+    "awayTeam": "Saudi Arabia",
+    "bettor": "Kaizo",
+    "pick": "2-2",
+    "odds": 46,
+    "stake": 5
   }
 ]
