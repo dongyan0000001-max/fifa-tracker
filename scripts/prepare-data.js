@@ -71,7 +71,23 @@ function patchTeamFlags() {
     ["England", "🏴"],
     ["Croatia", "🇭🇷"],
     ["Portugal", "🇵🇹"],
-    ["DR Congo", "🇨🇩"]
+    ["DR Congo", "🇨🇩"],
+    ["Qatar", "🇶🇦"],
+    ["Switzerland", "🇨🇭"],
+    ["Ivory Coast", "🇨🇮"],
+    ["Ecuador", "🇪🇨"],
+    ["Iran", "🇮🇷"],
+    ["New Zealand", "🇳🇿"],
+    ["Haiti", "🇭🇹"],
+    ["Scotland", "🏴"],
+    ["Morocco", "🇲🇦"],
+    ["Brazil", "🇧🇷"],
+    ["Australia", "🇦🇺"],
+    ["Turkey", "🇹🇷"],
+    ["Ghana", "🇬🇭"],
+    ["Panama", "🇵🇦"],
+    ["Uzbekistan", "🇺🇿"],
+    ["Colombia", "🇨🇴"]
   ];
 
   let changed = false;
@@ -83,6 +99,6 @@ function patchTeamFlags() {
 
   if (changed) {
     fs.writeFileSync(BUILD_SITE_PATH, content);
-    console.log("Patched build-site.js with new country flags.");
+    console.log("Patched build-site.js with country flags.");
   }
 }
