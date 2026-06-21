@@ -1408,5 +1408,45 @@
     "pick": "1-2",
     "odds": 14,
     "stake": 10
+  },
+  {
+    "matchId": "2026-06-20-japan-vs-tunisia",
+    "date": "2026-06-20",
+    "homeTeam": "Japan",
+    "awayTeam": "Tunisia",
+    "bettor": "Kaizo",
+    "pick": "1-1",
+    "odds": 8.8,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-20-japan-vs-tunisia",
+    "date": "2026-06-20",
+    "homeTeam": "Japan",
+    "awayTeam": "Tunisia",
+    "bettor": "Kaizo",
+    "pick": "2-1",
+    "odds": 8.8,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-20-japan-vs-tunisia",
+    "date": "2026-06-20",
+    "homeTeam": "Japan",
+    "awayTeam": "Tunisia",
+    "bettor": "Kaizo",
+    "pick": "1-0",
+    "odds": 5.1,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-20-japan-vs-tunisia",
+    "date": "2026-06-20",
+    "homeTeam": "Japan",
+    "awayTeam": "Tunisia",
+    "bettor": "Kaizo",
+    "pick": "2-2",
+    "odds": 30,
+    "stake": 5
   }
 ]
