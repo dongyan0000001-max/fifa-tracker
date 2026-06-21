@@ -98,5 +98,20 @@
     "matchId": "2026-06-18-mexico-vs-korea-republic",
     "finalScore": "1-0",
     "aos": false
+  },
+  {
+    "matchId": "2026-06-20-ecuador-vs-curacao",
+    "finalScore": "0-0",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-20-germany-vs-ivory-coast",
+    "finalScore": "2-1",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-20-netherlands-vs-sweden",
+    "finalScore": "5-1",
+    "aos": false
   }
 ]
