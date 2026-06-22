@@ -118,5 +118,25 @@
     "matchId": "2026-06-20-japan-vs-tunisia",
     "finalScore": "4-0",
     "aos": false
+  },
+  {
+    "matchId": "2026-06-21-spain-vs-saudi-arabia",
+    "finalScore": "4-0",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-21-belgium-vs-iran",
+    "finalScore": "0-0",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-21-uruguay-vs-cape-verde",
+    "finalScore": "2-2",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-21-egypt-vs-new-zealand",
+    "finalScore": "3-1",
+    "aos": false
   }
 ]
