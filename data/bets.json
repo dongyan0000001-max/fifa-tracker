@@ -1938,5 +1938,15 @@
     "pick": "1-0",
     "odds": 7.9,
     "stake": 5
+  },
+  {
+    "matchId": "2026-06-22-norway-vs-senegal",
+    "date": "2026-06-22",
+    "homeTeam": "Norway",
+    "awayTeam": "Senegal",
+    "bettor": "URIS",
+    "pick": "Norway -0/0.5",
+    "odds": 1.95,
+    "stake": 120
   }
 ]
