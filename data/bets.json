@@ -1798,5 +1798,145 @@
     "pick": "2-2",
     "odds": 46,
     "stake": 5
+  },
+  {
+    "matchId": "2026-06-22-norway-vs-senegal",
+    "date": "2026-06-22",
+    "homeTeam": "Norway",
+    "awayTeam": "Senegal",
+    "bettor": "Thomas",
+    "pick": "3-1",
+    "odds": 16,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-22-norway-vs-senegal",
+    "date": "2026-06-22",
+    "homeTeam": "Norway",
+    "awayTeam": "Senegal",
+    "bettor": "Thomas",
+    "pick": "2-1",
+    "odds": 8.8,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-22-norway-vs-senegal",
+    "date": "2026-06-22",
+    "homeTeam": "Norway",
+    "awayTeam": "Senegal",
+    "bettor": "Thomas",
+    "pick": "2-0",
+    "odds": 11,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-22-france-vs-iraq",
+    "date": "2026-06-22",
+    "homeTeam": "France",
+    "awayTeam": "Iraq",
+    "bettor": "Thomas",
+    "pick": "4-0",
+    "odds": 6.8,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-22-france-vs-iraq",
+    "date": "2026-06-22",
+    "homeTeam": "France",
+    "awayTeam": "Iraq",
+    "bettor": "Thomas",
+    "pick": "3-1",
+    "odds": 11,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-22-france-vs-iraq",
+    "date": "2026-06-22",
+    "homeTeam": "France",
+    "awayTeam": "Iraq",
+    "bettor": "Thomas",
+    "pick": "3-0",
+    "odds": 6.1,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-22-france-vs-iraq",
+    "date": "2026-06-22",
+    "homeTeam": "France",
+    "awayTeam": "Iraq",
+    "bettor": "Thomas",
+    "pick": "2-1",
+    "odds": 14,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-22-argentina-vs-austria",
+    "date": "2026-06-22",
+    "homeTeam": "Argentina",
+    "awayTeam": "Austria",
+    "bettor": "Thomas",
+    "pick": "2-2",
+    "odds": 20,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-22-argentina-vs-austria",
+    "date": "2026-06-22",
+    "homeTeam": "Argentina",
+    "awayTeam": "Austria",
+    "bettor": "Thomas",
+    "pick": "1-1",
+    "odds": 7.9,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-22-argentina-vs-austria",
+    "date": "2026-06-22",
+    "homeTeam": "Argentina",
+    "awayTeam": "Austria",
+    "bettor": "Thomas",
+    "pick": "2-1",
+    "odds": 8.3,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-22-norway-vs-senegal",
+    "date": "2026-06-22",
+    "homeTeam": "Norway",
+    "awayTeam": "Senegal",
+    "bettor": "URIS",
+    "pick": "4-2",
+    "odds": 71,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-22-norway-vs-senegal",
+    "date": "2026-06-22",
+    "homeTeam": "Norway",
+    "awayTeam": "Senegal",
+    "bettor": "URIS",
+    "pick": "3-1",
+    "odds": 16,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-22-norway-vs-senegal",
+    "date": "2026-06-22",
+    "homeTeam": "Norway",
+    "awayTeam": "Senegal",
+    "bettor": "URIS",
+    "pick": "2-1",
+    "odds": 8.8,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-22-norway-vs-senegal",
+    "date": "2026-06-22",
+    "homeTeam": "Norway",
+    "awayTeam": "Senegal",
+    "bettor": "URIS",
+    "pick": "1-0",
+    "odds": 7.9,
+    "stake": 5
   }
 ]
