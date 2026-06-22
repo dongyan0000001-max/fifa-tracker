@@ -1,0 +1,52 @@
+[
+  {
+    "matchId": "2026-06-22-norway-vs-senegal",
+    "date": "2026-06-22",
+    "homeTeam": "Norway",
+    "awayTeam": "Senegal",
+    "bettor": "Kaizo",
+    "pick": "1-0",
+    "odds": 8.30,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-22-norway-vs-senegal",
+    "date": "2026-06-22",
+    "homeTeam": "Norway",
+    "awayTeam": "Senegal",
+    "bettor": "Kaizo",
+    "pick": "1-1",
+    "odds": 6.50,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-22-norway-vs-senegal",
+    "date": "2026-06-22",
+    "homeTeam": "Norway",
+    "awayTeam": "Senegal",
+    "bettor": "Kaizo",
+    "pick": "2-1",
+    "odds": 8.20,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-22-norway-vs-senegal",
+    "date": "2026-06-22",
+    "homeTeam": "Norway",
+    "awayTeam": "Senegal",
+    "bettor": "Kaizo",
+    "pick": "2-0",
+    "odds": 12.00,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-22-norway-vs-senegal",
+    "date": "2026-06-22",
+    "homeTeam": "Norway",
+    "awayTeam": "Senegal",
+    "bettor": "Kaizo",
+    "pick": "Over 2.5",
+    "odds": 1.97,
+    "stake": 100
+  }
+]
