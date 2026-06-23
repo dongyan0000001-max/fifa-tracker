@@ -205,7 +205,7 @@ function settleBet(bet, result) {
     };
   }
 
-  const won = bet.pick === result.finalScore || (bet.pick === "AOS" && result.aos === true);
+  const won = bet.pick === result.finalScore || (bet.pick === "AOS" && result.aos === true) || isSpecialWinningBet(bet, result);
   const actualPayout = won ? potentialPayout : 0;
 
   return {
@@ -215,6 +215,18 @@ function settleBet(bet, result) {
     actualPayout,
     net: roundMoney(actualPayout - bet.stake)
   };
+}
+
+
+function isSpecialWinningBet(bet, result) {
+  const score = String(result && result.finalScore || "").match(/^(\d+)-(\d+)$/);
+  if (!score) return false;
+  const home = Number(score[1]);
+  const away = Number(score[2]);
+  const total = home + away;
+  if (bet.matchId === "2026-06-22-norway-vs-senegal" && bet.bettor === "URIS" && bet.pick === "Norway -0/0.5") return home > away;
+  if (bet.matchId === "2026-06-22-norway-vs-senegal" && bet.bettor === "Kaizo" && bet.pick === "Over 2.5") return total > 2.5;
+  return false;
 }
 
 function allSettledBets() {
