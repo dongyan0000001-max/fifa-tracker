@@ -2118,5 +2118,125 @@
     "pick": "England FH -1",
     "odds": 2.23,
     "stake": 100
+  },
+  {
+    "matchId": "2026-06-23-colombia-vs-dr-congo",
+    "date": "2026-06-23",
+    "homeTeam": "Colombia",
+    "awayTeam": "DR Congo",
+    "bettor": "Kaizo",
+    "pick": "2-0",
+    "odds": 6.3,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-23-colombia-vs-dr-congo",
+    "date": "2026-06-23",
+    "homeTeam": "Colombia",
+    "awayTeam": "DR Congo",
+    "bettor": "Kaizo",
+    "pick": "2-1",
+    "odds": 8.8,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-23-colombia-vs-dr-congo",
+    "date": "2026-06-23",
+    "homeTeam": "Colombia",
+    "awayTeam": "DR Congo",
+    "bettor": "Kaizo",
+    "pick": "1-1",
+    "odds": 7.9,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-23-croatia-vs-panama",
+    "date": "2026-06-23",
+    "homeTeam": "Croatia",
+    "awayTeam": "Panama",
+    "bettor": "Kaizo",
+    "pick": "2-0",
+    "odds": 7.3,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-23-croatia-vs-panama",
+    "date": "2026-06-23",
+    "homeTeam": "Croatia",
+    "awayTeam": "Panama",
+    "bettor": "Kaizo",
+    "pick": "1-1",
+    "odds": 9.2,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-23-croatia-vs-panama",
+    "date": "2026-06-23",
+    "homeTeam": "Croatia",
+    "awayTeam": "Panama",
+    "bettor": "Kaizo",
+    "pick": "0-0",
+    "odds": 16,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-23-england-vs-ghana",
+    "date": "2026-06-23",
+    "homeTeam": "England",
+    "awayTeam": "Ghana",
+    "bettor": "Kaizo",
+    "pick": "England -0.5/1 First Half",
+    "odds": 1.79,
+    "stake": 200
+  },
+  {
+    "matchId": "2026-06-23-england-vs-ghana",
+    "date": "2026-06-23",
+    "homeTeam": "England",
+    "awayTeam": "Ghana",
+    "bettor": "Kaizo",
+    "pick": "2-0",
+    "odds": 5.3,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-23-england-vs-ghana",
+    "date": "2026-06-23",
+    "homeTeam": "England",
+    "awayTeam": "Ghana",
+    "bettor": "Kaizo",
+    "pick": "AOS",
+    "odds": 6,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-23-england-vs-ghana",
+    "date": "2026-06-23",
+    "homeTeam": "England",
+    "awayTeam": "Ghana",
+    "bettor": "Kaizo",
+    "pick": "4-2",
+    "odds": 57,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-23-england-vs-ghana",
+    "date": "2026-06-23",
+    "homeTeam": "England",
+    "awayTeam": "Ghana",
+    "bettor": "Kaizo",
+    "pick": "3-1",
+    "odds": 11,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-23-england-vs-ghana",
+    "date": "2026-06-23",
+    "homeTeam": "England",
+    "awayTeam": "Ghana",
+    "bettor": "Kaizo",
+    "pick": "3-0",
+    "odds": 6.1,
+    "stake": 10
   }
 ]
