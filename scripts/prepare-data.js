@@ -8,6 +8,7 @@ const BUILD_SITE_PATH = path.join(__dirname, "build-site.js");
 
 mergeExtraBets();
 patchTeamFlags();
+patchSpecialSettlement();
 
 function mergeExtraBets() {
   const betsPath = path.join(DATA_DIR, "bets.json");
@@ -68,26 +69,11 @@ function patchTeamFlags() {
   if (!fs.existsSync(BUILD_SITE_PATH)) return;
   let content = fs.readFileSync(BUILD_SITE_PATH, "utf8");
   const additions = [
-    ["England", "🏴"],
-    ["Croatia", "🇭🇷"],
-    ["Portugal", "🇵🇹"],
-    ["DR Congo", "🇨🇩"],
-    ["Qatar", "🇶🇦"],
-    ["Switzerland", "🇨🇭"],
-    ["Ivory Coast", "🇨🇮"],
-    ["Ecuador", "🇪🇨"],
-    ["Iran", "🇮🇷"],
-    ["New Zealand", "🇳🇿"],
-    ["Haiti", "🇭🇹"],
-    ["Scotland", "🏴"],
-    ["Morocco", "🇲🇦"],
-    ["Brazil", "🇧🇷"],
-    ["Australia", "🇦🇺"],
-    ["Turkey", "🇹🇷"],
-    ["Ghana", "🇬🇭"],
-    ["Panama", "🇵🇦"],
-    ["Uzbekistan", "🇺🇿"],
-    ["Colombia", "🇨🇴"]
+    ["England", "🏴"], ["Croatia", "🇭🇷"], ["Portugal", "🇵🇹"], ["DR Congo", "🇨🇩"],
+    ["Qatar", "🇶🇦"], ["Switzerland", "🇨🇭"], ["Ivory Coast", "🇨🇮"], ["Ecuador", "🇪🇨"],
+    ["Iran", "🇮🇷"], ["New Zealand", "🇳🇿"], ["Haiti", "🇭🇹"], ["Scotland", "🏴"],
+    ["Morocco", "🇲🇦"], ["Brazil", "🇧🇷"], ["Australia", "🇦🇺"], ["Turkey", "🇹🇷"],
+    ["Ghana", "🇬🇭"], ["Panama", "🇵🇦"], ["Uzbekistan", "🇺🇿"], ["Colombia", "🇨🇴"]
   ];
 
   let changed = false;
@@ -101,4 +87,20 @@ function patchTeamFlags() {
     fs.writeFileSync(BUILD_SITE_PATH, content);
     console.log("Patched build-site.js with country flags.");
   }
+}
+
+function patchSpecialSettlement() {
+  if (!fs.existsSync(BUILD_SITE_PATH)) return;
+  let content = fs.readFileSync(BUILD_SITE_PATH, "utf8");
+  if (content.includes("isSpecialWinningBet")) return;
+
+  const oldLine = "  const won = bet.pick === result.finalScore || (bet.pick === \"AOS\" && result.aos === true);";
+  const newLine = "  const won = bet.pick === result.finalScore || (bet.pick === \"AOS\" && result.aos === true) || isSpecialWinningBet(bet, result);";
+  if (!content.includes(oldLine)) return;
+  content = content.replace(oldLine, newLine);
+
+  const helper = `\nfunction isSpecialWinningBet(bet, result) {\n  const score = String(result && result.finalScore || \"\").match(/^(\\d+)-(\\d+)$/);\n  if (!score) return false;\n  const home = Number(score[1]);\n  const away = Number(score[2]);\n  const total = home + away;\n  if (bet.matchId === \"2026-06-22-norway-vs-senegal\" && bet.bettor === \"URIS\" && bet.pick === \"Norway -0/0.5\") return home > away;\n  if (bet.matchId === \"2026-06-22-norway-vs-senegal\" && bet.bettor === \"Kaizo\" && bet.pick === \"Over 2.5\") return total > 2.5;\n  return false;\n}\n`;
+  content = content.replace("function allSettledBets() {", helper + "\nfunction allSettledBets() {");
+  fs.writeFileSync(BUILD_SITE_PATH, content);
+  console.log("Patched build-site.js with special bet settlement.");
 }
