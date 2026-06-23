@@ -2278,5 +2278,165 @@
     "pick": "0-1",
     "odds": 52,
     "stake": 5
+  },
+  {
+    "matchId": "2026-06-23-colombia-vs-dr-congo",
+    "date": "2026-06-23",
+    "homeTeam": "Colombia",
+    "awayTeam": "DR Congo",
+    "bettor": "Zac",
+    "pick": "3-1",
+    "odds": 15,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-23-colombia-vs-dr-congo",
+    "date": "2026-06-23",
+    "homeTeam": "Colombia",
+    "awayTeam": "DR Congo",
+    "bettor": "Zac",
+    "pick": "3-0",
+    "odds": 11,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-23-colombia-vs-dr-congo",
+    "date": "2026-06-23",
+    "homeTeam": "Colombia",
+    "awayTeam": "DR Congo",
+    "bettor": "Zac",
+    "pick": "2-1",
+    "odds": 8.8,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-23-colombia-vs-dr-congo",
+    "date": "2026-06-23",
+    "homeTeam": "Colombia",
+    "awayTeam": "DR Congo",
+    "bettor": "Zac",
+    "pick": "2-0",
+    "odds": 6.3,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-23-croatia-vs-panama",
+    "date": "2026-06-23",
+    "homeTeam": "Croatia",
+    "awayTeam": "Panama",
+    "bettor": "Zac",
+    "pick": "3-1",
+    "odds": 10,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-23-croatia-vs-panama",
+    "date": "2026-06-23",
+    "homeTeam": "Croatia",
+    "awayTeam": "Panama",
+    "bettor": "Zac",
+    "pick": "3-0",
+    "odds": 10,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-23-croatia-vs-panama",
+    "date": "2026-06-23",
+    "homeTeam": "Croatia",
+    "awayTeam": "Panama",
+    "bettor": "Zac",
+    "pick": "2-1",
+    "odds": 8,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-23-croatia-vs-panama",
+    "date": "2026-06-23",
+    "homeTeam": "Croatia",
+    "awayTeam": "Panama",
+    "bettor": "Zac",
+    "pick": "2-0",
+    "odds": 7.3,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-23-croatia-vs-panama",
+    "date": "2026-06-23",
+    "homeTeam": "Croatia",
+    "awayTeam": "Panama",
+    "bettor": "Zac",
+    "pick": "1-0",
+    "odds": 7.9,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-23-england-vs-ghana",
+    "date": "2026-06-23",
+    "homeTeam": "England",
+    "awayTeam": "Ghana",
+    "bettor": "Zac",
+    "pick": "AOS",
+    "odds": 6.4,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-23-england-vs-ghana",
+    "date": "2026-06-23",
+    "homeTeam": "England",
+    "awayTeam": "Ghana",
+    "bettor": "Zac",
+    "pick": "4-0",
+    "odds": 9.2,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-23-england-vs-ghana",
+    "date": "2026-06-23",
+    "homeTeam": "England",
+    "awayTeam": "Ghana",
+    "bettor": "Zac",
+    "pick": "3-0",
+    "odds": 6.1,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-23-portugal-vs-uzbekistan",
+    "date": "2026-06-23",
+    "homeTeam": "Portugal",
+    "awayTeam": "Uzbekistan",
+    "bettor": "Zac",
+    "pick": "1-1",
+    "odds": 17,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-23-portugal-vs-uzbekistan",
+    "date": "2026-06-23",
+    "homeTeam": "Portugal",
+    "awayTeam": "Uzbekistan",
+    "bettor": "Zac",
+    "pick": "3-0",
+    "odds": 5.6,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-23-portugal-vs-uzbekistan",
+    "date": "2026-06-23",
+    "homeTeam": "Portugal",
+    "awayTeam": "Uzbekistan",
+    "bettor": "Zac",
+    "pick": "2-1",
+    "odds": 11,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-23-portugal-vs-uzbekistan",
+    "date": "2026-06-23",
+    "homeTeam": "Portugal",
+    "awayTeam": "Uzbekistan",
+    "bettor": "Zac",
+    "pick": "2-0",
+    "odds": 5.7,
+    "stake": 5
   }
 ]
