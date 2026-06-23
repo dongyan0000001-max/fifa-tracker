@@ -13,7 +13,10 @@ patchSpecialSettlement();
 function mergeExtraBets() {
   const betsPath = path.join(DATA_DIR, "bets.json");
   const baseBets = JSON.parse(fs.readFileSync(betsPath, "utf8"));
-  const correctedBaseBets = baseBets.filter((bet) => !isWrongPortugalUrisBet(bet));
+  const correctedBaseBets = baseBets.filter((bet) => (
+    !isWrongPortugalUrisBet(bet) &&
+    !isWrongNorwaySenegalMirrorBet(bet)
+  ));
   const allBets = [...correctedBaseBets];
   const seen = new Set(correctedBaseBets.map(betKey));
 
@@ -49,6 +52,17 @@ function isWrongPortugalUrisBet(bet) {
       (bet.pick === "2-1" && Number(bet.odds) === 9.2) ||
       (bet.pick === "0-1" && Number(bet.odds) === 24)
     )
+  );
+}
+
+function isWrongNorwaySenegalMirrorBet(bet) {
+  if (bet.matchId !== "2026-06-22-norway-vs-senegal" || bet.pick !== "3-2") {
+    return false;
+  }
+
+  return (
+    (bet.bettor === "URIS" && Number(bet.odds) === 1.95 && Number(bet.stake) === 120) ||
+    (bet.bettor === "Kaizo" && Number(bet.odds) === 1.97 && Number(bet.stake) === 100)
   );
 }
 
@@ -99,7 +113,7 @@ function patchSpecialSettlement() {
   if (!content.includes(oldLine)) return;
   content = content.replace(oldLine, newLine);
 
-  const helper = `\nfunction isSpecialWinningBet(bet, result) {\n  const score = String(result && result.finalScore || \"\").match(/^(\\d+)-(\\d+)$/);\n  if (!score) return false;\n  const home = Number(score[1]);\n  const away = Number(score[2]);\n  const total = home + away;\n  if (bet.matchId === \"2026-06-22-norway-vs-senegal\" && bet.bettor === \"URIS\" && bet.pick === \"Norway -0/0.5\") return home > away;\n  if (bet.matchId === \"2026-06-22-norway-vs-senegal\" && bet.bettor === \"Kaizo\" && bet.pick === \"Over 2.5\") return total > 2.5;\n  return false;\n}\n`;
+  const helper = `\nfunction isSpecialWinningBet(bet, result) {\n  const score = String(result && result.finalScore || "").match(/^(\\d+)-(\\d+)$/);\n  if (!score) return false;\n  const home = Number(score[1]);\n  const away = Number(score[2]);\n  const total = home + away;\n  if (bet.matchId === "2026-06-22-norway-vs-senegal" && bet.bettor === "URIS" && bet.pick === "Norway -0/0.5") return home > away;\n  if (bet.matchId === "2026-06-22-norway-vs-senegal" && bet.bettor === "Kaizo" && bet.pick === "Over 2.5") return total > 2.5;\n  return false;\n}\n`;
   content = content.replace("function allSettledBets() {", helper + "\nfunction allSettledBets() {");
   fs.writeFileSync(BUILD_SITE_PATH, content);
   console.log("Patched build-site.js with special bet settlement.");
