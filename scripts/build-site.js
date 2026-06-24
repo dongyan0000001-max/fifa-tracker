@@ -5,7 +5,7 @@ const ROOT_DIR = path.resolve(__dirname, "..");
 const DATA_DIR = path.join(ROOT_DIR, "data");
 const MATCHES_DIR = path.join(ROOT_DIR, "matches");
 const BETTORS_DIR = path.join(ROOT_DIR, "bettors");
-const BETTOR_ORDER = ["Kaizo", "Thomas", "Zac", "Eric", "TSL", "URIS"];
+const BETTOR_ORDER = ["Kaizo", "Thomas", "Zac", "Eric", "URIS"];
 const TEAM_FLAGS = {
   "Mexico": "🇲🇽",
   "South Africa": "🇿🇦",
