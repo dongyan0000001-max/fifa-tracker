@@ -2438,5 +2438,145 @@
     "pick": "2-0",
     "odds": 5.7,
     "stake": 5
+  },
+  {
+    "matchId": "2026-06-24-brazil-vs-scotland",
+    "date": "2026-06-24",
+    "homeTeam": "Brazil",
+    "awayTeam": "Scotland",
+    "bettor": "Kaizo",
+    "pick": "2-1",
+    "odds": 9.4,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-24-brazil-vs-scotland",
+    "date": "2026-06-24",
+    "homeTeam": "Brazil",
+    "awayTeam": "Scotland",
+    "bettor": "Kaizo",
+    "pick": "2-0",
+    "odds": 5.2,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-24-brazil-vs-scotland",
+    "date": "2026-06-24",
+    "homeTeam": "Brazil",
+    "awayTeam": "Scotland",
+    "bettor": "Kaizo",
+    "pick": "1-1",
+    "odds": 11,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-24-brazil-vs-scotland",
+    "date": "2026-06-24",
+    "homeTeam": "Brazil",
+    "awayTeam": "Scotland",
+    "bettor": "Kaizo",
+    "pick": "0-1",
+    "odds": 25,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-24-canada-vs-switzerland",
+    "date": "2026-06-24",
+    "homeTeam": "Canada",
+    "awayTeam": "Switzerland",
+    "bettor": "Kaizo",
+    "pick": "1-1",
+    "odds": 5.6,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-24-canada-vs-switzerland",
+    "date": "2026-06-24",
+    "homeTeam": "Canada",
+    "awayTeam": "Switzerland",
+    "bettor": "Kaizo",
+    "pick": "2-1",
+    "odds": 11,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-24-canada-vs-switzerland",
+    "date": "2026-06-24",
+    "homeTeam": "Canada",
+    "awayTeam": "Switzerland",
+    "bettor": "Kaizo",
+    "pick": "1-2",
+    "odds": 8.9,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-24-morocco-vs-haiti",
+    "date": "2026-06-24",
+    "homeTeam": "Morocco",
+    "awayTeam": "Haiti",
+    "bettor": "Kaizo",
+    "pick": "3-0",
+    "odds": 6,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-24-morocco-vs-haiti",
+    "date": "2026-06-24",
+    "homeTeam": "Morocco",
+    "awayTeam": "Haiti",
+    "bettor": "Kaizo",
+    "pick": "4-1",
+    "odds": 17,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-24-morocco-vs-haiti",
+    "date": "2026-06-24",
+    "homeTeam": "Morocco",
+    "awayTeam": "Haiti",
+    "bettor": "Kaizo",
+    "pick": "3-1",
+    "odds": 12,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-24-morocco-vs-haiti",
+    "date": "2026-06-24",
+    "homeTeam": "Morocco",
+    "awayTeam": "Haiti",
+    "bettor": "Kaizo",
+    "pick": "2-0",
+    "odds": 5.2,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-24-bosnia-herzegovina-vs-qatar",
+    "date": "2026-06-24",
+    "homeTeam": "Bosnia Herzegovina",
+    "awayTeam": "Qatar",
+    "bettor": "Kaizo",
+    "pick": "3-2",
+    "odds": 26,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-24-bosnia-herzegovina-vs-qatar",
+    "date": "2026-06-24",
+    "homeTeam": "Bosnia Herzegovina",
+    "awayTeam": "Qatar",
+    "bettor": "Kaizo",
+    "pick": "1-2",
+    "odds": 26,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-24-bosnia-herzegovina-vs-qatar",
+    "date": "2026-06-24",
+    "homeTeam": "Bosnia Herzegovina",
+    "awayTeam": "Qatar",
+    "bettor": "Kaizo",
+    "pick": "2-1",
+    "odds": 8.8,
+    "stake": 10
   }
 ]
