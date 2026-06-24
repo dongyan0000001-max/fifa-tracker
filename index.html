@@ -1,17 +1,144 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>⚽️ FIFA 2026</title><link rel="icon" type="image/png" href="assets/site-icon.png"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png"><meta name="apple-mobile-web-app-title" content="FIFA Tracker"><link rel="stylesheet" href="assets/style.css"></head>
-<body><section class="hero"><h1>⚽️ FIFA 2026</h1></section><nav class="nav"><a class="" href="index.html">Summary</a><a class="secondary" href="calendar.html">Calendar</a><a class="secondary" href="completed.html">Completed</a><a class="secondary" href="ongoing.html">On Going</a></nav>
-<main>
-<section class="card">
-  <h2>Overall Summary</h2>
-  <div class="grid">
-    <div class="kpi"><span class="label">Total Entries</span><b>264</b></div>
-    <div class="kpi"><span class="label">Total RM Bet</span><b>RM2,345.00</b></div>
-    <div class="kpi"><span class="label">Total Payout</span><b>RM1,803.50</b></div>
-    <div class="kpi"><span class="label">Current Net</span><b class="bad">RM-522.50</b></div>
+<title>FIFA 2026 Bets Tracker</title><link rel="icon" href="https://pub-3bd35431294c47068cbf31a95d572166.r2.dev/logos/fifa-world-cup-2026/fifa-world-cup-2026-logo-footylogos.png"><link rel="apple-touch-icon" href="https://pub-3bd35431294c47068cbf31a95d572166.r2.dev/logos/fifa-world-cup-2026/fifa-world-cup-2026-logo-footylogos.png"><meta name="apple-mobile-web-app-title" content="FIFA Tracker"><link rel="stylesheet" href="assets/style.css"></head>
+<body>
+<div class="app-shell">
+<header class="site-header">
+  <div class="phone-status" aria-hidden="true"><span>9:41</span><span class="phone-icons"><i></i><i></i><i></i><b></b><em></em></span></div>
+  <div class="brand-scene">
+    <a class="brand" href="index.html">
+      <img src="https://pub-3bd35431294c47068cbf31a95d572166.r2.dev/logos/fifa-world-cup-2026/fifa-world-cup-2026-logo-footylogos.png" alt="FIFA World Cup 26 mark">
+      <span><b>FIFA 2026</b><strong>Bets Tracker</strong></span>
+    </a>
+    <div class="we-are">WE<br>ARE<br>26</div>
   </div>
-  <h2 style="margin-top:18px">By Bettor</h2>
-  <a class="person" href="bettors/kaizo.html"><div><b>Kaizo</b><small>115 entries · RM1,170.00 bet · RM874.00 payout</small></div><strong class="bad">RM-296.00</strong></a><a class="person" href="bettors/thomas.html"><div><b>Thomas</b><small>43 entries · RM370.00 bet · RM372.50 payout</small></div><strong class="good">RM21.50</strong></a><a class="person" href="bettors/zac.html"><div><b>Zac</b><small>72 entries · RM455.00 bet · RM254.00 payout</small></div><strong class="bad">RM-201.00</strong></a><a class="person" href="bettors/eric.html"><div><b>Eric</b><small>6 entries · RM30.00 bet · RM0.00 payout</small></div><strong class="bad">RM-30.00</strong></a><a class="person" href="bettors/uris.html"><div><b>URIS</b><small>28 entries · RM320.00 bet · RM303.00 payout</small></div><strong class="bad">RM-17.00</strong></a>
-</section>
-</main></body></html>
+  <nav class="nav"><a class="is-active" href="index.html">Summary</a><a class="" href="calendar.html">Calendar</a><a class="" href="completed.html">Completed</a><a class="" href="ongoing.html">On Going</a></nav>
+</header>
+
+<main class="dashboard">
+  <section class="kpi-grid">
+    <div class="kpi-card ">
+      <span class="kpi-icon kpi-clipboard"></span>
+      <div><b>264</b><span>Entries</span></div>
+    </div>
+    <div class="kpi-card ">
+      <span class="kpi-icon kpi-wallet"></span>
+      <div><b>RM2,345</b><span>Bet</span></div>
+    </div>
+    <div class="kpi-card ">
+      <span class="kpi-icon kpi-payout"></span>
+      <div><b>RM1,803.50</b><span>Payout</span></div>
+    </div>
+    <div class="kpi-card tone-bad">
+      <span class="kpi-icon kpi-trend"></span>
+      <div><b>RM-522.50</b><span>Net</span></div>
+    </div></section>
+
+  <section class="panel standings-panel">
+    <div class="section-head">
+      <div><span class="section-icon trophy-icon">🏆</span><h2>Bettor Standings</h2></div>
+      <a class="quiet-link" href="#bettors">View all<span class="chevron"></span></a>
+    </div>
+    <div class="standing-list" id="bettors">
+      <a class="standing-row" href="bettors/kaizo.html" data-search="kaizo 115 1170 874 -296">
+    <span class="rank">1</span>
+    <span class="avatar">K</span>
+    <span class="standing-name"><b>Kaizo</b></span>
+    <strong class="bad">RM-296.00</strong>
+    <span class="chevron"></span>
+  </a><a class="standing-row" href="bettors/thomas.html" data-search="thomas 43 370 372.5 21.5">
+    <span class="rank">2</span>
+    <span class="avatar">T</span>
+    <span class="standing-name"><b>Thomas</b></span>
+    <strong class="good">RM21.50</strong>
+    <span class="chevron"></span>
+  </a><a class="standing-row" href="bettors/zac.html" data-search="zac 72 455 254 -201">
+    <span class="rank">3</span>
+    <span class="avatar">Z</span>
+    <span class="standing-name"><b>Zac</b></span>
+    <strong class="bad">RM-201.00</strong>
+    <span class="chevron"></span>
+  </a><a class="standing-row" href="bettors/eric.html" data-search="eric 6 30 0 -30">
+    <span class="rank">4</span>
+    <span class="avatar">E</span>
+    <span class="standing-name"><b>Eric</b></span>
+    <strong class="bad">RM-30.00</strong>
+    <span class="chevron"></span>
+  </a><a class="standing-row" href="bettors/uris.html" data-search="uris 28 320 303 -17">
+    <span class="rank">5</span>
+    <span class="avatar">U</span>
+    <span class="standing-name"><b>URIS</b></span>
+    <strong class="bad">RM-17.00</strong>
+    <span class="chevron"></span>
+  </a>
+    </div>
+  </section>
+
+  <section class="panel fixture-panel">
+    <div class="section-head">
+      <div><span class="section-icon ball-icon">⚽</span><h2>On Going Matches</h2></div>
+      <a class="quiet-link" href="ongoing.html">View all<span class="chevron"></span></a>
+    </div>
+    <div class="fixture-list">
+      <a class="fixture-card is-selected" href="matches/24-06-2026-brazil-vs-scotland.html" data-search="brazil vs scotland pending on going 40 -40">
+    <div class="fixture-date">24/06<br>/2026</div>
+    <div class="fixture-main">
+      <div class="fixture-teams"><span class="flag-badge flag-brazil" aria-label="Brazil"><span>🇧🇷</span></span><b>Brazil</b><em>vs</em><b>Scotland</b><span class="flag-badge flag-scotland" aria-label="Scotland"><span>🏴</span></span></div>
+      <div class="fixture-meta"><span>4 entries</span><i></i><span>RM40.00</span><i></i><strong class="bad">RM-40.00</strong></div>
+    </div>
+    <span class="status status-pending">Pending</span>
+    <span class="chevron"></span>
+  </a><a class="fixture-card " href="matches/24-06-2026-canada-vs-switzerland.html" data-search="canada vs switzerland pending on going 30 -30">
+    <div class="fixture-date">24/06<br>/2026</div>
+    <div class="fixture-main">
+      <div class="fixture-teams"><span class="flag-badge flag-canada" aria-label="Canada"><span>🇨🇦</span></span><b>Canada</b><em>vs</em><b>Switzerland</b><span class="flag-badge flag-switzerland" aria-label="Switzerland"><span>🇨🇭</span></span></div>
+      <div class="fixture-meta"><span>3 entries</span><i></i><span>RM30.00</span><i></i><strong class="bad">RM-30.00</strong></div>
+    </div>
+    <span class="status status-pending">Pending</span>
+    <span class="chevron"></span>
+  </a><a class="fixture-card " href="matches/24-06-2026-morocco-vs-haiti.html" data-search="morocco vs haiti pending on going 20 -20">
+    <div class="fixture-date">24/06<br>/2026</div>
+    <div class="fixture-main">
+      <div class="fixture-teams"><span class="flag-badge flag-morocco" aria-label="Morocco"><span>🇲🇦</span></span><b>Morocco</b><em>vs</em><b>Haiti</b><span class="flag-badge flag-haiti" aria-label="Haiti"><span>🇭🇹</span></span></div>
+      <div class="fixture-meta"><span>4 entries</span><i></i><span>RM20.00</span><i></i><strong class="bad">RM-20.00</strong></div>
+    </div>
+    <span class="status status-pending">Pending</span>
+    <span class="chevron"></span>
+  </a>
+    </div>
+  </section>
+
+  <section class="panel selected-panel">
+    <div class="selected-title">
+      <div>
+        <span class="section-icon">⚽</span>
+        <h2>Brazil vs Scotland</h2>
+      </div>
+      <span class="status status-pending">Pending</span>
+    </div>
+    <div class="table-wrap"><table class="data-table bet-table" data-filter-table="selected-match">
+    <thead><tr><th>Bettor</th><th>Pick</th><th class="num">Rate</th><th class="num">RM Bet</th><th>Status</th><th class="num">Payout / Potential</th><th class="num">Net</th></tr></thead>
+    <tbody><tr data-search="kaizo 2-1 pending 9.4 10 94 -10">
+    <td><span class="avatar avatar-small">K</span>Kaizo</td>
+    <td>2-1</td>
+    <td class="num">9.40</td>
+    <td class="num">RM10.00</td>
+    <td><span class="status status-pending">Pending</span></td>
+    <td class="num">RM94.00</td>
+    <td class="num bad">RM-10.00</td>
+  </tr><tr data-search="kaizo 2-0 pending 5.2 10 52 -10">
+    <td><span class="avatar avatar-small">K</span>Kaizo</td>
+    <td>2-0</td>
+    <td class="num">5.20</td>
+    <td class="num">RM10.00</td>
+    <td><span class="status status-pending">Pending</span></td>
+    <td class="num">RM52.00</td>
+    <td class="num bad">RM-10.00</td>
+  </tr></tbody>
+  </table></div>
+    <a class="full-width-link" href="matches/24-06-2026-brazil-vs-scotland.html">View all 4 entries<span class="down-caret"></span></a>
+  </section>
+</main>
+</div>
+<script src="assets/app.js"></script>
+</body></html>
