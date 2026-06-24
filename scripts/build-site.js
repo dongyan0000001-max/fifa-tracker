@@ -54,7 +54,7 @@ const TEAM_FLAGS = {
   "DR Congo": "🇨🇩",
   "Portugal": "🇵🇹",
   "Croatia": "🇭🇷",
-  "England": "🏴"
+  "England": "\u{1F3F4}\u{E0067}\u{E0062}\u{E0065}\u{E006E}\u{E0067}\u{E007F}"
 };
 
 const bets = readJson("bets.json");

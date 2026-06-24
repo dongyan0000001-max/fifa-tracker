@@ -83,7 +83,7 @@ function patchTeamFlags() {
   if (!fs.existsSync(BUILD_SITE_PATH)) return;
   let content = fs.readFileSync(BUILD_SITE_PATH, "utf8");
   const additions = [
-    ["England", "🏴"], ["Croatia", "🇭🇷"], ["Portugal", "🇵🇹"], ["DR Congo", "🇨🇩"],
+    ["England", "\\u{1F3F4}\\u{E0067}\\u{E0062}\\u{E0065}\\u{E006E}\\u{E0067}\\u{E007F}"], ["Croatia", "🇭🇷"], ["Portugal", "🇵🇹"], ["DR Congo", "🇨🇩"],
     ["Qatar", "🇶🇦"], ["Switzerland", "🇨🇭"], ["Ivory Coast", "🇨🇮"], ["Ecuador", "🇪🇨"],
     ["Iran", "🇮🇷"], ["New Zealand", "🇳🇿"], ["Haiti", "🇭🇹"], ["Scotland", "🏴"],
     ["Morocco", "🇲🇦"], ["Brazil", "🇧🇷"], ["Australia", "🇦🇺"], ["Turkey", "🇹🇷"],
