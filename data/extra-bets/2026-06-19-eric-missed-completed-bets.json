@@ -1,0 +1,62 @@
+[
+  {
+    "matchId": "2026-06-19-brazil-vs-haiti",
+    "date": "2026-06-19",
+    "homeTeam": "Brazil",
+    "awayTeam": "Haiti",
+    "bettor": "Eric",
+    "pick": "4-1",
+    "odds": 13,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-19-brazil-vs-haiti",
+    "date": "2026-06-19",
+    "homeTeam": "Brazil",
+    "awayTeam": "Haiti",
+    "bettor": "Eric",
+    "pick": "3-1",
+    "odds": 10,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-19-morocco-vs-scotland",
+    "date": "2026-06-19",
+    "homeTeam": "Morocco",
+    "awayTeam": "Scotland",
+    "bettor": "Eric",
+    "pick": "2-2",
+    "odds": 22,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-19-usa-vs-australia",
+    "date": "2026-06-19",
+    "homeTeam": "USA",
+    "awayTeam": "Australia",
+    "bettor": "Eric",
+    "pick": "3-2",
+    "odds": 28,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-19-usa-vs-australia",
+    "date": "2026-06-19",
+    "homeTeam": "USA",
+    "awayTeam": "Australia",
+    "bettor": "Eric",
+    "pick": "2-1",
+    "odds": 7.7,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-19-usa-vs-australia",
+    "date": "2026-06-19",
+    "homeTeam": "USA",
+    "awayTeam": "Australia",
+    "bettor": "Eric",
+    "pick": "1-0",
+    "odds": 6.9,
+    "stake": 5
+  }
+]
