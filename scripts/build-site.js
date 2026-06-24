@@ -6,6 +6,7 @@ const DATA_DIR = path.join(ROOT_DIR, "data");
 const MATCHES_DIR = path.join(ROOT_DIR, "matches");
 const BETTORS_DIR = path.join(ROOT_DIR, "bettors");
 const BETTOR_ORDER = ["Kaizo", "Thomas", "Zac", "Eric", "URIS"];
+const FIFA_2026_LOGO_URL = "https://pub-3bd35431294c47068cbf31a95d572166.r2.dev/logos/fifa-world-cup-2026/fifa-world-cup-2026-logo-footylogos.png";
 const TEAM_FLAGS = {
   "Mexico": "🇲🇽",
   "South Africa": "🇿🇦",
@@ -139,7 +140,18 @@ function matchStats(match) {
   const stake = sum(settledBets, "stake");
   const actualPayout = sum(settledBets, "actualPayout");
   const net = sum(settledBets, "net");
-  return { ...match, result, isCompleted: Boolean(result), statusLabel: result ? "Completed" : "On Going", resultLabel: result ? `Final ${result.finalScore}` : "Pending", entries: settledBets.length, stake, actualPayout, net, settledBets };
+  return {
+    ...match,
+    result,
+    isCompleted: Boolean(result),
+    statusLabel: result ? "Completed" : "On Going",
+    resultLabel: result ? `Final ${result.finalScore}` : "Pending",
+    entries: settledBets.length,
+    stake,
+    actualPayout,
+    net,
+    settledBets
+  };
 }
 
 function settleBet(bet, result, match) {
@@ -168,8 +180,7 @@ function settleSpecialBet(bet, result, match) {
     return total < 2.5 ? winSettlement(bet) : loseSettlement(bet);
   }
   if (pickLower === "under 3/3.5" || pickLower === "under 3.25") {
-    if (total <= 3) return winSettlement(bet);
-    return loseSettlement(bet);
+    return total <= 3 ? winSettlement(bet) : loseSettlement(bet);
   }
 
   if (bet.matchId === "2026-06-23-england-vs-ghana" && bet.bettor === "Thomas" && pick === "England FH -1") {
@@ -180,23 +191,25 @@ function settleSpecialBet(bet, result, match) {
   }
 
   const handicap = parseHandicapPick(pick);
-  if (handicap) {
-    const team = normalizeTeamName(handicap.team);
-    const isHome = team === normalizeTeamName(match.homeTeam);
-    const isAway = team === normalizeTeamName(match.awayTeam);
-    if (!isHome && !isAway) return null;
-    const teamGoals = isHome ? score.home : score.away;
-    const otherGoals = isHome ? score.away : score.home;
-    const margin = teamGoals - otherGoals;
-    const line = handicap.line;
+  if (!handicap) return null;
 
-    if (line === -1) {
-      if (margin > 1) return winSettlement(bet);
-      if (margin === 1) return pushSettlement(bet);
-      return loseSettlement(bet);
-    }
-    if (line === -0.25 || line === -0.5) return margin > 0 ? winSettlement(bet) : loseSettlement(bet);
-    if (line === -0.75) return margin > 0 ? winSettlement(bet) : loseSettlement(bet);
+  const team = normalizeTeamName(handicap.team);
+  const isHome = team === normalizeTeamName(match.homeTeam);
+  const isAway = team === normalizeTeamName(match.awayTeam);
+  if (!isHome && !isAway) return null;
+
+  const teamGoals = isHome ? score.home : score.away;
+  const otherGoals = isHome ? score.away : score.home;
+  const margin = teamGoals - otherGoals;
+  const line = handicap.line;
+
+  if (line === -1) {
+    if (margin > 1) return winSettlement(bet);
+    if (margin === 1) return pushSettlement(bet);
+    return loseSettlement(bet);
+  }
+  if (line === -0.25 || line === -0.5 || line === -0.75) {
+    return margin > 0 ? winSettlement(bet) : loseSettlement(bet);
   }
 
   return null;
@@ -232,9 +245,8 @@ function normalizeTeamName(value) {
   return String(value || "").toLowerCase().replace(/[^a-z0-9]/g, "");
 }
 
-
 function isSpecialWinningBet(bet, result) {
-  const score = String(result && result.finalScore || "").match(/^(\d+)-(\d+)$/);
+  const score = String((result && result.finalScore) || "").match(/^(\d+)-(\d+)$/);
   if (!score) return false;
   const home = Number(score[1]);
   const away = Number(score[2]);
@@ -247,7 +259,14 @@ function isSpecialWinningBet(bet, result) {
 function allSettledBets() {
   return matches.flatMap((match) => {
     const stats = matchStats(match);
-    return stats.settledBets.map((bet) => ({ ...bet, matchLabel: stats.label, matchFileName: stats.fileName, resultLabel: stats.resultLabel, statusLabel: stats.statusLabel }));
+    return stats.settledBets.map((bet) => ({
+      ...bet,
+      matchLabel: stats.label,
+      matchPlainLabel: stats.plainLabel,
+      matchFileName: stats.fileName,
+      resultLabel: stats.resultLabel,
+      statusLabel: stats.statusLabel
+    }));
   });
 }
 
@@ -257,24 +276,65 @@ function renderIndexPage() {
   const totalPayout = sum(allBets, "actualPayout");
   const totalNet = sum(allBets, "net");
   const bettors = bettorSummary(allBets);
-  return htmlPage({ title: "⚽️ FIFA 2026", heading: "⚽️ FIFA 2026", subtitle: "", active: "index", body: `
-<main>
-<section class="card">
-  <h2>Overall Summary</h2>
-  <div class="grid">
-    <div class="kpi"><span class="label">Total Entries</span><b>${allBets.length}</b></div>
-    <div class="kpi"><span class="label">Total RM Bet</span><b>${money(totalStake)}</b></div>
-    <div class="kpi"><span class="label">Total Payout</span><b>${money(totalPayout)}</b></div>
-    <div class="kpi"><span class="label">Current Net</span><b class="${toneClass(totalNet)}">${money(totalNet)}</b></div>
-  </div>
-  <h2 style="margin-top:18px">By Bettor</h2>
-  ${bettors.map(renderPerson).join("")}
-</section>
-</main>` });
+  const ongoing = ongoingMatches().map(matchStats);
+  const latestCompleted = completedMatches().map(matchStats).slice(-6).reverse();
+  const selectedMatch = ongoing[0] || latestCompleted[0];
+
+  return htmlPage({
+    title: "FIFA 2026 Bets Tracker",
+    active: "index",
+    summary: { entries: allBets.length, totalStake, totalPayout, totalNet },
+    body: `
+<main class="dashboard">
+  ${renderKpiGrid([
+    ["Entries", allBets.length, "clipboard"],
+    ["Bet", moneyShort(totalStake), "wallet"],
+    ["Payout", money(totalPayout), "payout"],
+    ["Net", money(totalNet), "trend", toneClass(totalNet)]
+  ])}
+
+  <section class="panel standings-panel">
+    <div class="section-head">
+      <div><span class="section-icon trophy-icon">🏆</span><h2>Bettor Standings</h2></div>
+      <a class="quiet-link" href="#bettors">View all<span class="chevron"></span></a>
+    </div>
+    <div class="standing-list" id="bettors">
+      ${bettors.map((bettor, index) => renderBettorStanding(bettor, index, "")).join("")}
+    </div>
+  </section>
+
+  <section class="panel fixture-panel">
+    <div class="section-head">
+      <div><span class="section-icon ball-icon">⚽</span><h2>On Going Matches</h2></div>
+      <a class="quiet-link" href="ongoing.html">View all<span class="chevron"></span></a>
+    </div>
+    <div class="fixture-list">
+      ${(ongoing.length ? ongoing : latestCompleted.slice(0, 3)).slice(0, 3).map((match, index) => renderFixtureCard(match, index === 0)).join("")}
+    </div>
+  </section>
+
+  ${selectedMatch ? renderSelectedMatch(selectedMatch, "") : ""}
+</main>`
+  });
 }
 
-function renderPerson(person) {
-  return `<a class="person" href="bettors/${person.fileName}"><div><b>${escapeHtml(person.name)}</b><small>${person.entries} entries · ${money(person.stake)} bet · ${money(person.payout)} payout</small></div><strong class="${toneClass(person.net)}">${money(person.net)}</strong></a>`;
+function renderKpiGrid(items) {
+  return `<section class="kpi-grid">${items.map(([label, value, icon, tone]) => `
+    <div class="kpi-card ${tone ? `tone-${tone}` : ""}">
+      <span class="kpi-icon kpi-${icon}"></span>
+      <div><b>${escapeHtml(value)}</b><span>${escapeHtml(label)}</span></div>
+    </div>`).join("")}</section>`;
+}
+
+function renderBettorStanding(bettor, index, basePath) {
+  const href = `${basePath}bettors/${bettor.fileName}`;
+  return `<a class="standing-row" href="${href}" data-search="${searchText([bettor.name, bettor.entries, bettor.stake, bettor.payout, bettor.net])}">
+    <span class="rank">${index + 1}</span>
+    <span class="avatar">${escapeHtml(bettor.name.slice(0, 1))}</span>
+    <span class="standing-name"><b>${escapeHtml(bettor.name)}</b></span>
+    <strong class="${toneClass(bettor.net)}">${money(bettor.net)}</strong>
+    <span class="chevron"></span>
+  </a>`;
 }
 
 function bettorSummary(entries) {
@@ -282,85 +342,262 @@ function bettorSummary(entries) {
   for (const bet of entries) if (!names.includes(bet.bettor)) names.push(bet.bettor);
   return names.map((name) => {
     const bettorBets = entries.filter((bet) => bet.bettor === name);
-    return { name, entries: bettorBets.length, stake: sum(bettorBets, "stake"), payout: sum(bettorBets, "actualPayout"), net: sum(bettorBets, "net"), fileName: `${slugify(name)}.html`, bets: bettorBets };
+    return {
+      name,
+      entries: bettorBets.length,
+      stake: sum(bettorBets, "stake"),
+      payout: sum(bettorBets, "actualPayout"),
+      net: sum(bettorBets, "net"),
+      fileName: `${slugify(name)}.html`,
+      bets: bettorBets
+    };
   });
 }
 
-function renderBettorPage(bettor) {
-  return htmlPage({ title: `⚽️ ${bettor.name}`, heading: `⚽️ ${bettor.name}`, subtitle: "", basePath: "../", body: `
-<main>
-<section class="card">
-  <div class="match-head"><div><div class="match-title">${escapeHtml(bettor.name)}</div><div class="match-meta">${bettor.entries} entries · ${money(bettor.stake)} bet · ${money(bettor.payout)} payout</div></div><div class="${toneClass(bettor.net)}" style="font-size:22px">${money(bettor.net)}</div></div>
-  <div class="scroll"><table><thead><tr><th>Date</th><th>Match</th><th>Pick</th><th class="num">Rate</th><th class="num">RM Bet</th><th>Result</th><th>Status</th><th class="num">Payout</th><th class="num">Net</th></tr></thead>
-<tbody>${bettor.bets.map(renderBettorBetRow).join("")}<tr class="total"><td>Total</td><td></td><td></td><td></td><td class="num">${money(bettor.stake)}</td><td></td><td></td><td class="num">${money(bettor.payout)}</td><td class="num ${toneClass(bettor.net)}">${money(bettor.net)}</td></tr></tbody></table></div>
-</section>
-<section class="card"><a class="badge" href="../index.html">← Back to Summary</a></section>
-</main>` });
+function renderFixtureCard(match, selected = false, basePath = "") {
+  const href = `${basePath}matches/${match.fileName}`;
+  return `<a class="fixture-card ${selected ? "is-selected" : ""}" href="${href}" data-search="${searchText([match.plainLabel, match.resultLabel, match.statusLabel, match.stake, match.net])}">
+    <div class="fixture-date">${displayDateShort(match.date)}</div>
+    <div class="fixture-main">
+      <div class="fixture-teams">${flagBadge(match.homeTeam)}<b>${escapeHtml(match.homeTeam)}</b><em>vs</em><b>${escapeHtml(match.awayTeam)}</b>${flagBadge(match.awayTeam)}</div>
+      <div class="fixture-meta"><span>${match.entries} entries</span><i></i><span>${money(match.stake)}</span><i></i><strong class="${toneClass(match.net)}">${money(match.net)}</strong></div>
+    </div>
+    ${statusChip(match.resultLabel)}
+    <span class="chevron"></span>
+  </a>`;
 }
 
-function renderBettorBetRow(bet) {
-  return `<tr><td>${displayDate(bet.date)}</td><td><a href="../matches/${bet.matchFileName}">${escapeHtml(bet.matchLabel)}</a></td><td>${escapeHtml(bet.pick)}</td><td class="num">${odds(bet.odds)}</td><td class="num">${money(bet.stake)}</td><td>${escapeHtml(bet.resultLabel)}</td><td>${escapeHtml(bet.status)}</td><td class="num">${money(bet.actualPayout)}</td><td class="num ${toneClass(bet.net)}">${money(bet.net)}</td></tr>`;
+function renderMatchTable(matchList, filterId, linkMode, basePath = "") {
+  return `<div class="table-wrap"><table class="data-table" data-filter-table="${filterId}">
+    <thead><tr><th>Date</th><th>Match</th><th>Result / Status</th><th class="num">Entries</th><th class="num">RM Bet</th><th class="num">Net</th></tr></thead>
+    <tbody>${matchList.map((match) => renderCalendarRow(match, linkMode, basePath)).join("")}</tbody>
+  </table></div>`;
 }
 
 function renderCalendarPage() {
   const stats = matches.map(matchStats);
-  return htmlPage({ title: "⚽️ FIFA 2026 Calendar", heading: "⚽️ FIFA 2026 Calendar", subtitle: "Match details: date, who vs who, status, entries and net.", active: "calendar", body: `<main><section class="card"><h2>Calendar</h2><div class="scroll"><table><thead><tr><th>Date</th><th>Who vs Who</th><th>Result / Status</th><th>Group</th><th class="num">Entries</th><th class="num">RM Bet</th><th class="num">Net</th></tr></thead><tbody>${stats.map(renderCalendarRow).join("")}</tbody></table></div></section></main>` });
+  return htmlPage({
+    title: "FIFA 2026 Calendar",
+    active: "calendar",
+    body: `
+<main>
+  <section class="panel page-panel">
+    <div class="section-head section-head-tools">
+      <div><span class="section-icon">📅</span><h2>Calendar</h2><p>All matches, results, entries and net totals.</p></div>
+      <label class="search-box"><span>Search</span><input type="search" placeholder="Search match..." data-filter-input data-filter-target="calendar"></label>
+    </div>
+    ${renderMatchTable(stats, "calendar", "calendar")}
+  </section>
+</main>`
+  });
 }
 
-function renderCalendarRow(match) {
-  return `<tr><td>${displayDate(match.date)}</td><td><a href="matches/${match.fileName}">${escapeHtml(match.label)}</a></td><td>${escapeHtml(match.resultLabel)}</td><td>${escapeHtml(match.statusLabel)}</td><td class="num">${match.entries}</td><td class="num">${money(match.stake)}</td><td class="num ${toneClass(match.net)}">${money(match.net)}</td></tr>`;
+function renderCalendarRow(match, linkMode = "calendar", basePath = "") {
+  const href = `${basePath}matches/${match.fileName}`;
+  const search = searchText([match.date, match.plainLabel, match.resultLabel, match.statusLabel, match.entries, match.stake, match.net]);
+  return `<tr data-search="${search}">
+    <td>${displayDate(match.date)}</td>
+    <td><a class="match-cell" href="${href}">${escapeHtml(match.label)}</a></td>
+    <td>${statusChip(match.resultLabel)} <span class="muted-inline">${escapeHtml(match.statusLabel)}</span></td>
+    <td class="num">${match.entries}</td>
+    <td class="num">${money(match.stake)}</td>
+    <td class="num ${toneClass(match.net)}">${money(match.net)}</td>
+  </tr>`;
 }
 
 function renderMatchListPage(title, active, matchList) {
   const stats = matchList.map(matchStats);
-  return htmlPage({ title: `⚽️ ${title}`, heading: `⚽️ ${title}`, subtitle: "Separate match pages. Click any match to view the bettor entries.", active, body: `<main><section class="card"><h2>${escapeHtml(title)}</h2><div class="match-list">${stats.map((match) => renderMatchCard(match, false)).join("")}</div></section></main>` });
+  return htmlPage({
+    title: `FIFA 2026 ${title}`,
+    active,
+    body: `
+<main>
+  <section class="panel page-panel">
+    <div class="section-head section-head-tools">
+      <div><span class="section-icon">${active === "completed" ? "✅" : "⚽"}</span><h2>${escapeHtml(title)}</h2><p>Tap any fixture to see every bettor entry.</p></div>
+      <label class="search-box"><span>Search</span><input type="search" placeholder="Search match..." data-filter-input data-filter-target="${active}-cards"></label>
+    </div>
+    <div class="match-card-grid" data-filter-table="${active}-cards">${stats.map((match) => renderMatchCard(match, "")).join("")}</div>
+  </section>
+</main>`
+  });
 }
 
-function renderMatchCard(match, showStake) {
-  const badgeClass = match.isCompleted ? "done" : "pending";
-  const stakeText = showStake ? ` · ${money(match.stake)} bet` : "";
-  return `<a class="match-link" href="matches/${match.fileName}"><span class="badge ${badgeClass}">${escapeHtml(match.statusLabel)}</span><div class="teams">${escapeHtml(match.label)}</div><div class="meta">${displayDate(match.date)}<br>${escapeHtml(match.resultLabel)} · ${match.entries} entries${stakeText}</div><div class="net ${toneClass(match.net)}">${money(match.net)}</div></a>`;
+function renderMatchCard(match, basePath = "") {
+  return `<a class="match-card" href="${basePath}matches/${match.fileName}" data-search="${searchText([match.date, match.plainLabel, match.resultLabel, match.statusLabel, match.entries, match.stake, match.net])}">
+    <div class="match-card-top">${statusChip(match.statusLabel)}<span>${displayDate(match.date)}</span></div>
+    <div class="match-card-teams">${escapeHtml(match.label)}</div>
+    <div class="match-card-meta">${escapeHtml(match.resultLabel)} · ${match.entries} entries · ${money(match.stake)} bet</div>
+    <strong class="${toneClass(match.net)}">${money(match.net)}</strong>
+  </a>`;
+}
+
+function renderSelectedMatch(match, basePath) {
+  return `<section class="panel selected-panel">
+    <div class="selected-title">
+      <div>
+        <span class="section-icon">⚽</span>
+        <h2>${escapeHtml(match.plainLabel)}</h2>
+      </div>
+      ${statusChip(match.resultLabel)}
+    </div>
+    ${renderBetTable(match.settledBets.slice(0, 2), "selected-match", basePath)}
+    <a class="full-width-link" href="${basePath}matches/${match.fileName}">View all ${match.entries} entries<span class="down-caret"></span></a>
+  </section>`;
 }
 
 function renderMatchPage(match) {
   const stats = matchStats(match);
-  return htmlPage({ title: `⚽️ ${stats.label}`, heading: `⚽️ ${stats.label}`, subtitle: `${displayDate(stats.date)} · ${escapeHtml(stats.resultLabel)} · ${escapeHtml(stats.statusLabel)}`, basePath: "../", body: `
+  return htmlPage({
+    title: `FIFA 2026 ${stats.plainLabel}`,
+    active: "",
+    basePath: "../",
+    body: `
 <main>
-<section class="card">
-  <div class="match-head"><div><div class="match-title">${escapeHtml(stats.label)}</div><div class="match-meta">${displayDate(stats.date)} · ${escapeHtml(stats.resultLabel)} · ${escapeHtml(stats.statusLabel)}</div></div><div class="${toneClass(stats.net)}" style="font-size:22px">${money(stats.net)}</div></div>
-  <div class="grid" style="margin-bottom:12px"><div class="kpi"><span class="label">Entries</span><b>${stats.entries}</b></div><div class="kpi"><span class="label">RM Bet</span><b>${money(stats.stake)}</b></div></div>
-  <div class="scroll"><table><thead><tr><th>Bettor</th><th>Pick</th><th class="num">Rate</th><th class="num">RM Bet</th><th>Status</th><th class="num">Payout / Potential</th><th class="num">Net</th></tr></thead>
-<tbody>${stats.settledBets.map(renderBetRow).join("")}<tr class="total"><td>Match Total</td><td></td><td></td><td class="num">${money(stats.stake)}</td><td></td><td class="num"></td><td class="num ${toneClass(stats.net)}">${money(stats.net)}</td></tr></tbody></table></div>
-</section>
-<section class="card"><a class="badge" href="../calendar.html">← Back to Calendar</a></section>
-</main>` });
+  <section class="panel page-panel">
+    <div class="detail-hero">
+      <div>
+        <a class="back-link" href="../calendar.html">Back to Calendar</a>
+        <h2>${escapeHtml(stats.label)}</h2>
+        <p>${displayDate(stats.date)} · ${escapeHtml(stats.resultLabel)} · ${escapeHtml(stats.statusLabel)}</p>
+      </div>
+      <strong class="${toneClass(stats.net)}">${money(stats.net)}</strong>
+    </div>
+    ${renderKpiGrid([
+      ["Entries", stats.entries, "clipboard"],
+      ["RM Bet", money(stats.stake), "wallet"],
+      ["Potential / Payout", money(stats.isCompleted ? stats.actualPayout : sum(stats.settledBets, "displayPayout")), "payout"],
+      ["Net", money(stats.net), "trend", toneClass(stats.net)]
+    ])}
+    ${renderBetTable(stats.settledBets, "match-bets", "../")}
+  </section>
+</main>`
+  });
+}
+
+function renderBetTable(betsForMatch, filterId, basePath = "") {
+  return `<div class="table-wrap"><table class="data-table bet-table" data-filter-table="${filterId}">
+    <thead><tr><th>Bettor</th><th>Pick</th><th class="num">Rate</th><th class="num">RM Bet</th><th>Status</th><th class="num">Payout / Potential</th><th class="num">Net</th></tr></thead>
+    <tbody>${betsForMatch.map((bet) => renderBetRow(bet, basePath)).join("")}</tbody>
+  </table></div>`;
 }
 
 function renderBetRow(bet) {
-  return `<tr><td>${escapeHtml(bet.bettor)}</td><td>${escapeHtml(bet.pick)}</td><td class="num">${odds(bet.odds)}</td><td class="num">${money(bet.stake)}</td><td>${escapeHtml(bet.status)}</td><td class="num">${money(bet.displayPayout)}</td><td class="num ${toneClass(bet.net)}">${money(bet.net)}</td></tr>`;
+  return `<tr data-search="${searchText([bet.bettor, bet.pick, bet.status, bet.odds, bet.stake, bet.displayPayout, bet.net])}">
+    <td><span class="avatar avatar-small">${escapeHtml(bet.bettor.slice(0, 1))}</span>${escapeHtml(bet.bettor)}</td>
+    <td>${escapeHtml(bet.pick)}</td>
+    <td class="num">${odds(bet.odds)}</td>
+    <td class="num">${money(bet.stake)}</td>
+    <td>${statusChip(bet.status)}</td>
+    <td class="num">${money(bet.displayPayout)}</td>
+    <td class="num ${toneClass(bet.net)}">${money(bet.net)}</td>
+  </tr>`;
 }
 
-function htmlPage({ title, heading, subtitle, active = "", basePath = "", body }) {
-  const subtitleHtml = subtitle ? `<div class="sub">${subtitle}</div>` : "";
+function renderBettorPage(bettor) {
+  return htmlPage({
+    title: `FIFA 2026 ${bettor.name}`,
+    active: "",
+    basePath: "../",
+    body: `
+<main>
+  <section class="panel page-panel">
+    <div class="detail-hero">
+      <div>
+        <a class="back-link" href="../index.html">Back to Summary</a>
+        <h2>${escapeHtml(bettor.name)}</h2>
+        <p>${bettor.entries} entries · ${money(bettor.stake)} bet · ${money(bettor.payout)} payout</p>
+      </div>
+      <strong class="${toneClass(bettor.net)}">${money(bettor.net)}</strong>
+    </div>
+    ${renderKpiGrid([
+      ["Entries", bettor.entries, "clipboard"],
+      ["RM Bet", money(bettor.stake), "wallet"],
+      ["Payout", money(bettor.payout), "payout"],
+      ["Net", money(bettor.net), "trend", toneClass(bettor.net)]
+    ])}
+    <div class="section-head section-head-tools">
+      <div><span class="section-icon">📋</span><h2>Bet History</h2></div>
+      <label class="search-box"><span>Search</span><input type="search" placeholder="Search bets..." data-filter-input data-filter-target="bettor-bets"></label>
+    </div>
+    <div class="table-wrap"><table class="data-table" data-filter-table="bettor-bets">
+      <thead><tr><th>Date</th><th>Match</th><th>Pick</th><th class="num">Rate</th><th class="num">RM Bet</th><th>Result</th><th>Status</th><th class="num">Payout</th><th class="num">Net</th></tr></thead>
+      <tbody>${bettor.bets.map(renderBettorBetRow).join("")}</tbody>
+      <tfoot><tr><td>Total</td><td></td><td></td><td></td><td class="num">${money(bettor.stake)}</td><td></td><td></td><td class="num">${money(bettor.payout)}</td><td class="num ${toneClass(bettor.net)}">${money(bettor.net)}</td></tr></tfoot>
+    </table></div>
+  </section>
+</main>`
+  });
+}
+
+function renderBettorBetRow(bet) {
+  return `<tr data-search="${searchText([bet.date, bet.matchPlainLabel, bet.pick, bet.status, bet.resultLabel, bet.odds, bet.stake, bet.net])}">
+    <td>${displayDate(bet.date)}</td>
+    <td><a class="match-cell" href="../matches/${bet.matchFileName}">${escapeHtml(bet.matchLabel)}</a></td>
+    <td>${escapeHtml(bet.pick)}</td>
+    <td class="num">${odds(bet.odds)}</td>
+    <td class="num">${money(bet.stake)}</td>
+    <td>${escapeHtml(bet.resultLabel)}</td>
+    <td>${statusChip(bet.status)}</td>
+    <td class="num">${money(bet.actualPayout)}</td>
+    <td class="num ${toneClass(bet.net)}">${money(bet.net)}</td>
+  </tr>`;
+}
+
+function htmlPage({ title, active = "", basePath = "", summary = null, body }) {
+  const logoUrl = assetUrl(basePath, FIFA_2026_LOGO_URL);
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>${escapeHtml(title)}</title><link rel="icon" type="image/png" href="${basePath}assets/site-icon.png"><link rel="apple-touch-icon" href="${basePath}assets/apple-touch-icon.png"><meta name="apple-mobile-web-app-title" content="FIFA Tracker"><link rel="stylesheet" href="${basePath}assets/style.css"></head>
-<body><section class="hero"><h1>${escapeHtml(heading)}</h1>${subtitleHtml}</section>${nav(active, basePath)}${body.startsWith("\n") ? "" : "\n"}${body}</body></html>`;
+<title>${escapeHtml(title)}</title><link rel="icon" href="${logoUrl}"><link rel="apple-touch-icon" href="${logoUrl}"><meta name="apple-mobile-web-app-title" content="FIFA Tracker"><link rel="stylesheet" href="${basePath}assets/style.css"></head>
+<body>
+<div class="app-shell">
+<header class="site-header">
+  <div class="phone-status" aria-hidden="true"><span>9:41</span><span class="phone-icons"><i></i><i></i><i></i><b></b><em></em></span></div>
+  <div class="brand-scene">
+    <a class="brand" href="${basePath}index.html">
+      <img src="${logoUrl}" alt="FIFA World Cup 26 mark">
+      <span><b>FIFA 2026</b><strong>Bets Tracker</strong></span>
+    </a>
+    <div class="we-are">WE<br>ARE<br>26</div>
+  </div>
+  ${nav(active, basePath)}
+</header>
+${body}
+</div>
+<script src="${basePath}assets/app.js"></script>
+</body></html>`;
 }
 
 function nav(active, basePath) {
   const items = [["index", "index.html", "Summary"], ["calendar", "calendar.html", "Calendar"], ["completed", "completed.html", "Completed"], ["ongoing", "ongoing.html", "On Going"]];
-  return `<nav class="nav">${items.map(([key, href, label]) => `<a class="${active === key ? "" : "secondary"}" href="${basePath}${href}">${label}</a>`).join("")}</nav>`;
+  return `<nav class="nav">${items.map(([key, href, label]) => `<a class="${active === key ? "is-active" : ""}" href="${basePath}${href}">${label}</a>`).join("")}</nav>`;
 }
 
-function teamLabel(team) { return `${TEAM_FLAGS[team] || "🏳️"} ${team}`; }
+function statusChip(value) {
+  const text = String(value || "");
+  const key = text.toLowerCase();
+  let tone = "neutral";
+  if (key.includes("win") || key.includes("completed") || key.includes("final")) tone = "good";
+  if (key.includes("lose")) tone = "bad";
+  if (key.includes("pending") || key.includes("going")) tone = "pending";
+  if (key.includes("push")) tone = "push";
+  return `<span class="status status-${tone}">${escapeHtml(text)}</span>`;
+}
+
+function teamFlag(team) { return TEAM_FLAGS[team] || "🏳️"; }
+function flagBadge(team) { return `<span class="flag-badge flag-${slugify(team)}" aria-label="${escapeHtml(team)}"><span>${teamFlag(team)}</span></span>`; }
+function teamLabel(team) { return `${teamFlag(team)} ${team}`; }
 function matchLabel(homeTeam, awayTeam) { return `${teamLabel(homeTeam)} vs ${teamLabel(awayTeam)}`; }
 function displayDate(isoDate) { const [year, month, day] = isoDate.split("-"); return `${day}/${month}/${year}`; }
+function displayDateShort(isoDate) { const [year, month, day] = isoDate.split("-"); return `${day}/${month}<br>/${year}`; }
 function dateSlug(isoDate) { const [year, month, day] = isoDate.split("-"); return `${day}-${month}-${year}`; }
 function slugify(value) { return String(value).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/&/g, " and ").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""); }
 function sum(entries, field) { return roundMoney(entries.reduce((total, entry) => total + entry[field], 0)); }
 function roundMoney(value) { return Math.round((value + Number.EPSILON) * 100) / 100; }
 function money(value) { return `RM${roundMoney(value).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`; }
+function moneyShort(value) { return `RM${roundMoney(value).toLocaleString("en-US", { maximumFractionDigits: 2 })}`; }
 function odds(value) { return Number(value).toFixed(2); }
 function toneClass(value) { if (value > 0) return "good"; if (value < 0) return "bad"; return "neutral"; }
+function assetUrl(basePath, url) { return /^https?:\/\//.test(url) ? url : `${basePath}${url}`; }
+function searchText(values) { return escapeHtml(values.filter((value) => value !== undefined && value !== null).join(" ").toLowerCase()); }
 function escapeHtml(value) { return String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;"); }
