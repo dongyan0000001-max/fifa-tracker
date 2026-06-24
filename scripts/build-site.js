@@ -7,6 +7,7 @@ const MATCHES_DIR = path.join(ROOT_DIR, "matches");
 const BETTORS_DIR = path.join(ROOT_DIR, "bettors");
 const BETTOR_ORDER = ["Kaizo", "Thomas", "Zac", "Eric", "URIS"];
 const FIFA_2026_LOGO_URL = "https://pub-3bd35431294c47068cbf31a95d572166.r2.dev/logos/fifa-world-cup-2026/fifa-world-cup-2026-logo-footylogos.png";
+const STYLE_VERSION = "20260625-mobile-fit";
 const TEAM_FLAGS = {
   "Mexico": "🇲🇽",
   "South Africa": "🇿🇦",
@@ -294,10 +295,6 @@ function renderIndexPage() {
   ])}
 
   <section class="panel standings-panel">
-    <div class="section-head">
-      <div><span class="section-icon trophy-icon">🏆</span><h2>Bettor Standings</h2></div>
-      <a class="quiet-link" href="#bettors">View all<span class="chevron"></span></a>
-    </div>
     <div class="standing-list" id="bettors">
       ${bettors.map((bettor, index) => renderBettorStanding(bettor, index, "")).join("")}
     </div>
@@ -328,8 +325,10 @@ function renderKpiGrid(items) {
 
 function renderBettorStanding(bettor, index, basePath) {
   const href = `${basePath}bettors/${bettor.fileName}`;
+  const rank = rankLabel(index);
+  const rankClass = index < 3 ? "rank rank-medal" : "rank";
   return `<a class="standing-row" href="${href}" data-search="${searchText([bettor.name, bettor.entries, bettor.stake, bettor.payout, bettor.net])}">
-    <span class="rank">${index + 1}</span>
+    <span class="${rankClass}">${rank}</span>
     <span class="avatar">${escapeHtml(bettor.name.slice(0, 1))}</span>
     <span class="standing-name"><b>${escapeHtml(bettor.name)}</b></span>
     <strong class="${toneClass(bettor.net)}">${money(bettor.net)}</strong>
@@ -351,7 +350,7 @@ function bettorSummary(entries) {
       fileName: `${slugify(name)}.html`,
       bets: bettorBets
     };
-  });
+  }).sort((a, b) => a.net - b.net || names.indexOf(a.name) - names.indexOf(b.name));
 }
 
 function renderFixtureCard(match, selected = false, basePath = "") {
@@ -548,11 +547,10 @@ function htmlPage({ title, active = "", basePath = "", summary = null, body }) {
   const logoUrl = assetUrl(basePath, FIFA_2026_LOGO_URL);
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>${escapeHtml(title)}</title><link rel="icon" href="${logoUrl}"><link rel="apple-touch-icon" href="${logoUrl}"><meta name="apple-mobile-web-app-title" content="FIFA Tracker"><link rel="stylesheet" href="${basePath}assets/style.css"></head>
+<title>${escapeHtml(title)}</title><link rel="icon" href="${logoUrl}"><link rel="apple-touch-icon" href="${logoUrl}"><meta name="apple-mobile-web-app-title" content="FIFA Tracker"><link rel="stylesheet" href="${basePath}assets/style.css?v=${STYLE_VERSION}"></head>
 <body>
 <div class="app-shell">
 <header class="site-header">
-  <div class="phone-status" aria-hidden="true"><span>9:41</span><span class="phone-icons"><i></i><i></i><i></i><b></b><em></em></span></div>
   <div class="brand-scene">
     <a class="brand" href="${basePath}index.html">
       <img src="${logoUrl}" alt="FIFA World Cup 26 mark">
@@ -585,6 +583,7 @@ function statusChip(value) {
 }
 
 function teamFlag(team) { return TEAM_FLAGS[team] || "🏳️"; }
+function rankLabel(index) { return ["🏆", "🥈", "🥉"][index] || String(index + 1); }
 function flagBadge(team) { return `<span class="flag-badge flag-${slugify(team)}" aria-label="${escapeHtml(team)}"><span>${teamFlag(team)}</span></span>`; }
 function teamLabel(team) { return `${teamFlag(team)} ${team}`; }
 function matchLabel(homeTeam, awayTeam) { return `${teamLabel(homeTeam)} vs ${teamLabel(awayTeam)}`; }
