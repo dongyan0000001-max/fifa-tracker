@@ -149,7 +149,7 @@ function settleBet(bet, result, match) {
   const settlement = settleSpecialBet(bet, result, match);
   if (settlement) return { ...bet, ...settlement };
 
-  const won = bet.pick === result.finalScore || (bet.pick === "AOS" && result.aos === true);
+  const won = bet.pick === result.finalScore || (bet.pick === "AOS" && result.aos === true) || isSpecialWinningBet(bet, result);
   const actualPayout = won ? potentialPayout : 0;
   return { ...bet, status: won ? "Win" : "Lose", displayPayout: actualPayout, actualPayout, net: roundMoney(won ? actualPayout - bet.stake : -bet.stake) };
 }
@@ -230,6 +230,18 @@ function parseHandicapPick(pick) {
 
 function normalizeTeamName(value) {
   return String(value || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
+
+function isSpecialWinningBet(bet, result) {
+  const score = String(result && result.finalScore || "").match(/^(\d+)-(\d+)$/);
+  if (!score) return false;
+  const home = Number(score[1]);
+  const away = Number(score[2]);
+  const total = home + away;
+  if (bet.matchId === "2026-06-22-norway-vs-senegal" && bet.bettor === "URIS" && bet.pick === "Norway -0/0.5") return home > away;
+  if (bet.matchId === "2026-06-22-norway-vs-senegal" && bet.bettor === "Kaizo" && bet.pick === "Over 2.5") return total > 2.5;
+  return false;
 }
 
 function allSettledBets() {
