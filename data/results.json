@@ -153,5 +153,25 @@
     "matchId": "2026-06-22-france-vs-iraq",
     "finalScore": "3-0",
     "aos": false
+  },
+  {
+    "matchId": "2026-06-23-portugal-vs-uzbekistan",
+    "finalScore": "5-0",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-23-england-vs-ghana",
+    "finalScore": "0-0",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-23-croatia-vs-panama",
+    "finalScore": "1-0",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-23-colombia-vs-dr-congo",
+    "finalScore": "1-0",
+    "aos": false
   }
 ]
