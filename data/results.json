@@ -173,5 +173,20 @@
     "matchId": "2026-06-23-colombia-vs-dr-congo",
     "finalScore": "1-0",
     "aos": false
+  },
+  {
+    "matchId": "2026-06-19-brazil-vs-haiti",
+    "finalScore": "3-0",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-19-morocco-vs-scotland",
+    "finalScore": "1-0",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-19-usa-vs-australia",
+    "finalScore": "2-0",
+    "aos": false
   }
 ]
