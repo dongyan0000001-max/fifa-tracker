@@ -2688,5 +2688,265 @@
     "pick": "0-1",
     "odds": 11,
     "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-usa-vs-turkey",
+    "date": "2026-06-25",
+    "homeTeam": "USA",
+    "awayTeam": "Turkey",
+    "bettor": "Zac",
+    "pick": "1-1",
+    "odds": 7.9,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-usa-vs-turkey",
+    "date": "2026-06-25",
+    "homeTeam": "USA",
+    "awayTeam": "Turkey",
+    "bettor": "Zac",
+    "pick": "Draw",
+    "odds": 3.7,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-paraguay-vs-australia",
+    "date": "2026-06-25",
+    "homeTeam": "Paraguay",
+    "awayTeam": "Australia",
+    "bettor": "Zac",
+    "pick": "2-2",
+    "odds": 18,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-paraguay-vs-australia",
+    "date": "2026-06-25",
+    "homeTeam": "Paraguay",
+    "awayTeam": "Australia",
+    "bettor": "Zac",
+    "pick": "1-2",
+    "odds": 14,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-paraguay-vs-australia",
+    "date": "2026-06-25",
+    "homeTeam": "Paraguay",
+    "awayTeam": "Australia",
+    "bettor": "Zac",
+    "pick": "2-1",
+    "odds": 11,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-japan-vs-sweden",
+    "date": "2026-06-25",
+    "homeTeam": "Japan",
+    "awayTeam": "Sweden",
+    "bettor": "Zac",
+    "pick": "2-2",
+    "odds": 14,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-japan-vs-sweden",
+    "date": "2026-06-25",
+    "homeTeam": "Japan",
+    "awayTeam": "Sweden",
+    "bettor": "Zac",
+    "pick": "4-2",
+    "odds": 65,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-japan-vs-sweden",
+    "date": "2026-06-25",
+    "homeTeam": "Japan",
+    "awayTeam": "Sweden",
+    "bettor": "Zac",
+    "pick": "3-2",
+    "odds": 27,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-japan-vs-sweden",
+    "date": "2026-06-25",
+    "homeTeam": "Japan",
+    "awayTeam": "Sweden",
+    "bettor": "Zac",
+    "pick": "3-1",
+    "odds": 14,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-japan-vs-sweden",
+    "date": "2026-06-25",
+    "homeTeam": "Japan",
+    "awayTeam": "Sweden",
+    "bettor": "Zac",
+    "pick": "2-1",
+    "odds": 7.8,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-netherlands-vs-tunisia",
+    "date": "2026-06-25",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Tunisia",
+    "bettor": "Zac",
+    "pick": "AOS",
+    "odds": 4,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-netherlands-vs-tunisia",
+    "date": "2026-06-25",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Tunisia",
+    "bettor": "Zac",
+    "pick": "4-0",
+    "odds": 7.3,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-netherlands-vs-tunisia",
+    "date": "2026-06-25",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Tunisia",
+    "bettor": "Zac",
+    "pick": "3-0",
+    "odds": 5.7,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-netherlands-vs-tunisia",
+    "date": "2026-06-25",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Tunisia",
+    "bettor": "Zac",
+    "pick": "Netherlands -2.5",
+    "odds": 1.98,
+    "stake": 30
+  },
+  {
+    "matchId": "2026-06-25-ivory-coast-vs-curacao",
+    "date": "2026-06-25",
+    "homeTeam": "Ivory Coast",
+    "awayTeam": "Curaçao",
+    "bettor": "Zac",
+    "pick": "4-0",
+    "odds": 8.5,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-ivory-coast-vs-curacao",
+    "date": "2026-06-25",
+    "homeTeam": "Ivory Coast",
+    "awayTeam": "Curaçao",
+    "bettor": "Zac",
+    "pick": "3-0",
+    "odds": 6.7,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-ivory-coast-vs-curacao",
+    "date": "2026-06-25",
+    "homeTeam": "Ivory Coast",
+    "awayTeam": "Curaçao",
+    "bettor": "Zac",
+    "pick": "2-0",
+    "odds": 6.1,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-ivory-coast-vs-curacao",
+    "date": "2026-06-25",
+    "homeTeam": "Ivory Coast",
+    "awayTeam": "Curaçao",
+    "bettor": "Zac",
+    "pick": "1-0",
+    "odds": 9.2,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-germany-vs-ecuador",
+    "date": "2026-06-25",
+    "homeTeam": "Germany",
+    "awayTeam": "Ecuador",
+    "bettor": "Zac",
+    "pick": "3-0",
+    "odds": 12,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-germany-vs-ecuador",
+    "date": "2026-06-25",
+    "homeTeam": "Germany",
+    "awayTeam": "Ecuador",
+    "bettor": "Zac",
+    "pick": "2-0",
+    "odds": 8.1,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-germany-vs-ecuador",
+    "date": "2026-06-25",
+    "homeTeam": "Germany",
+    "awayTeam": "Ecuador",
+    "bettor": "Zac",
+    "pick": "Germany -1",
+    "odds": 2.08,
+    "stake": 20
+  },
+  {
+    "matchId": "2026-06-25-netherlands-vs-tunisia",
+    "date": "2026-06-25",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Tunisia",
+    "bettor": "Thomas",
+    "pick": "4-0",
+    "odds": 7.3,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-netherlands-vs-tunisia",
+    "date": "2026-06-25",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Tunisia",
+    "bettor": "Thomas",
+    "pick": "3-0",
+    "odds": 5.7,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-netherlands-vs-tunisia",
+    "date": "2026-06-25",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Tunisia",
+    "bettor": "Thomas",
+    "pick": "2-0",
+    "odds": 6.3,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-usa-vs-turkey",
+    "date": "2026-06-25",
+    "homeTeam": "USA",
+    "awayTeam": "Turkey",
+    "bettor": "Thomas",
+    "pick": "USA -0.5",
+    "odds": 1.88,
+    "stake": 100
+  },
+  {
+    "matchId": "2026-06-25-germany-vs-ecuador",
+    "date": "2026-06-25",
+    "homeTeam": "Germany",
+    "awayTeam": "Ecuador",
+    "bettor": "Thomas",
+    "pick": "Germany -1",
+    "odds": 2.05,
+    "stake": 100
   }
 ]
