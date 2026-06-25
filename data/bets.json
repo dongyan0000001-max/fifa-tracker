@@ -2638,5 +2638,55 @@
     "pick": "1-0",
     "odds": 6.9,
     "stake": 5
+  },
+  {
+    "matchId": "2026-06-24-korea-republic-vs-south-africa",
+    "date": "2026-06-24",
+    "homeTeam": "Korea Republic",
+    "awayTeam": "South Africa",
+    "bettor": "Kaizo",
+    "pick": "2-1",
+    "odds": 7.8,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-24-korea-republic-vs-south-africa",
+    "date": "2026-06-24",
+    "homeTeam": "Korea Republic",
+    "awayTeam": "South Africa",
+    "bettor": "Kaizo",
+    "pick": "2-0",
+    "odds": 7.1,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-24-korea-republic-vs-south-africa",
+    "date": "2026-06-24",
+    "homeTeam": "Korea Republic",
+    "awayTeam": "South Africa",
+    "bettor": "Kaizo",
+    "pick": "0-0",
+    "odds": 10,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-24-mexico-vs-czechia",
+    "date": "2026-06-24",
+    "homeTeam": "Mexico",
+    "awayTeam": "Czechia",
+    "bettor": "Kaizo",
+    "pick": "0-0",
+    "odds": 10,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-24-mexico-vs-czechia",
+    "date": "2026-06-24",
+    "homeTeam": "Mexico",
+    "awayTeam": "Czechia",
+    "bettor": "Kaizo",
+    "pick": "0-1",
+    "odds": 11,
+    "stake": 5
   }
 ]
