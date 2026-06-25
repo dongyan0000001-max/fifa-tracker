@@ -3168,5 +3168,45 @@
     "pick": "2-2",
     "odds": 18,
     "stake": 10
+  },
+  {
+    "matchId": "2026-06-25-japan-vs-sweden",
+    "date": "2026-06-25",
+    "homeTeam": "Japan",
+    "awayTeam": "Sweden",
+    "bettor": "Kaizo",
+    "pick": "4-3",
+    "odds": 175,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-japan-vs-sweden",
+    "date": "2026-06-25",
+    "homeTeam": "Japan",
+    "awayTeam": "Sweden",
+    "bettor": "Zac",
+    "pick": "4-3",
+    "odds": 175,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-japan-vs-sweden",
+    "date": "2026-06-25",
+    "homeTeam": "Japan",
+    "awayTeam": "Sweden",
+    "bettor": "Kaizo",
+    "pick": "3-4",
+    "odds": 226,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-japan-vs-sweden",
+    "date": "2026-06-25",
+    "homeTeam": "Japan",
+    "awayTeam": "Sweden",
+    "bettor": "Zac",
+    "pick": "3-4",
+    "odds": 226,
+    "stake": 5
   }
 ]
