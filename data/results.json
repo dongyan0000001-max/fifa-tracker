@@ -208,5 +208,15 @@
     "matchId": "2026-06-24-brazil-vs-scotland",
     "finalScore": "3-0",
     "aos": false
+  },
+  {
+    "matchId": "2026-06-24-korea-republic-vs-south-africa",
+    "finalScore": "0-1",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-24-mexico-vs-czechia",
+    "finalScore": "3-0",
+    "aos": false
   }
 ]
