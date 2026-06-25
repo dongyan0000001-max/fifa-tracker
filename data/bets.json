@@ -2948,5 +2948,225 @@
     "pick": "Germany -1",
     "odds": 2.05,
     "stake": 100
+  },
+  {
+    "matchId": "2026-06-25-netherlands-vs-tunisia",
+    "date": "2026-06-25",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Tunisia",
+    "bettor": "Kaizo",
+    "pick": "2-2",
+    "odds": 52,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-netherlands-vs-tunisia",
+    "date": "2026-06-25",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Tunisia",
+    "bettor": "Kaizo",
+    "pick": "2-4",
+    "odds": 288,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-netherlands-vs-tunisia",
+    "date": "2026-06-25",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Tunisia",
+    "bettor": "Kaizo",
+    "pick": "4-2",
+    "odds": 58,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-japan-vs-sweden",
+    "date": "2026-06-25",
+    "homeTeam": "Japan",
+    "awayTeam": "Sweden",
+    "bettor": "Kaizo",
+    "pick": "2-4",
+    "odds": 144,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-japan-vs-sweden",
+    "date": "2026-06-25",
+    "homeTeam": "Japan",
+    "awayTeam": "Sweden",
+    "bettor": "Kaizo",
+    "pick": "4-2",
+    "odds": 64,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-ivory-coast-vs-curacao",
+    "date": "2026-06-25",
+    "homeTeam": "Ivory Coast",
+    "awayTeam": "Curaçao",
+    "bettor": "Kaizo",
+    "pick": "1-0",
+    "odds": 9.2,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-ivory-coast-vs-curacao",
+    "date": "2026-06-25",
+    "homeTeam": "Ivory Coast",
+    "awayTeam": "Curaçao",
+    "bettor": "Kaizo",
+    "pick": "2-0",
+    "odds": 6.1,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-ivory-coast-vs-curacao",
+    "date": "2026-06-25",
+    "homeTeam": "Ivory Coast",
+    "awayTeam": "Curaçao",
+    "bettor": "Kaizo",
+    "pick": "1-2",
+    "odds": 54,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-25-ivory-coast-vs-curacao",
+    "date": "2026-06-25",
+    "homeTeam": "Ivory Coast",
+    "awayTeam": "Curaçao",
+    "bettor": "Kaizo",
+    "pick": "2-1",
+    "odds": 9.9,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-25-germany-vs-ecuador",
+    "date": "2026-06-25",
+    "homeTeam": "Germany",
+    "awayTeam": "Ecuador",
+    "bettor": "Kaizo",
+    "pick": "3-1",
+    "odds": 12,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-germany-vs-ecuador",
+    "date": "2026-06-25",
+    "homeTeam": "Germany",
+    "awayTeam": "Ecuador",
+    "bettor": "Kaizo",
+    "pick": "0-1",
+    "odds": 17,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-germany-vs-ecuador",
+    "date": "2026-06-25",
+    "homeTeam": "Germany",
+    "awayTeam": "Ecuador",
+    "bettor": "Kaizo",
+    "pick": "1-1",
+    "odds": 8.3,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-germany-vs-ecuador",
+    "date": "2026-06-25",
+    "homeTeam": "Germany",
+    "awayTeam": "Ecuador",
+    "bettor": "Kaizo",
+    "pick": "4-2",
+    "odds": 45,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-usa-vs-turkey",
+    "date": "2026-06-25",
+    "homeTeam": "USA",
+    "awayTeam": "Turkey",
+    "bettor": "Kaizo",
+    "pick": "1-2",
+    "odds": 13,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-usa-vs-turkey",
+    "date": "2026-06-25",
+    "homeTeam": "USA",
+    "awayTeam": "Turkey",
+    "bettor": "Kaizo",
+    "pick": "2-4",
+    "odds": 99,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-usa-vs-turkey",
+    "date": "2026-06-25",
+    "homeTeam": "USA",
+    "awayTeam": "Turkey",
+    "bettor": "Kaizo",
+    "pick": "0-3",
+    "odds": 58,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-paraguay-vs-australia",
+    "date": "2026-06-25",
+    "homeTeam": "Paraguay",
+    "awayTeam": "Australia",
+    "bettor": "Kaizo",
+    "pick": "0-1",
+    "odds": 6.3,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-paraguay-vs-australia",
+    "date": "2026-06-25",
+    "homeTeam": "Paraguay",
+    "awayTeam": "Australia",
+    "bettor": "Kaizo",
+    "pick": "1-0",
+    "odds": 5.4,
+    "stake": 5
+  },
+  {
+    "matchId": "2026-06-25-paraguay-vs-australia",
+    "date": "2026-06-25",
+    "homeTeam": "Paraguay",
+    "awayTeam": "Australia",
+    "bettor": "Kaizo",
+    "pick": "1-2",
+    "odds": 15,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-25-paraguay-vs-australia",
+    "date": "2026-06-25",
+    "homeTeam": "Paraguay",
+    "awayTeam": "Australia",
+    "bettor": "Kaizo",
+    "pick": "2-1",
+    "odds": 12,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-25-paraguay-vs-australia",
+    "date": "2026-06-25",
+    "homeTeam": "Paraguay",
+    "awayTeam": "Australia",
+    "bettor": "Kaizo",
+    "pick": "1-1",
+    "odds": 5,
+    "stake": 10
+  },
+  {
+    "matchId": "2026-06-25-paraguay-vs-australia",
+    "date": "2026-06-25",
+    "homeTeam": "Paraguay",
+    "awayTeam": "Australia",
+    "bettor": "Kaizo",
+    "pick": "2-2",
+    "odds": 18,
+    "stake": 10
   }
 ]
