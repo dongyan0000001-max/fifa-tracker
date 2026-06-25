@@ -188,5 +188,25 @@
     "matchId": "2026-06-19-usa-vs-australia",
     "finalScore": "2-0",
     "aos": false
+  },
+  {
+    "matchId": "2026-06-24-canada-vs-switzerland",
+    "finalScore": "1-2",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-24-bosnia-herzegovina-vs-qatar",
+    "finalScore": "3-1",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-24-morocco-vs-haiti",
+    "finalScore": "4-2",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-24-brazil-vs-scotland",
+    "finalScore": "3-0",
+    "aos": false
   }
 ]
