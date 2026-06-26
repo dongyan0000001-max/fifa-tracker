@@ -218,5 +218,25 @@
     "matchId": "2026-06-24-mexico-vs-czechia",
     "finalScore": "3-0",
     "aos": false
+  },
+  {
+    "matchId": "2026-06-25-germany-vs-ecuador",
+    "finalScore": "1-2",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-25-ivory-coast-vs-curacao",
+    "finalScore": "2-0",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-25-netherlands-vs-tunisia",
+    "finalScore": "3-1",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-25-japan-vs-sweden",
+    "finalScore": "1-1",
+    "aos": false
   }
 ]
