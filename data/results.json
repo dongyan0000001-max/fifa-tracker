@@ -248,5 +248,35 @@
     "matchId": "2026-06-25-paraguay-vs-australia",
     "finalScore": "0-0",
     "aos": false
+  },
+  {
+    "matchId": "2026-06-26-france-vs-norway",
+    "finalScore": "4-1",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-26-senegal-vs-iraq",
+    "finalScore": "5-0",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-26-saudi-arabia-vs-cape-verde",
+    "finalScore": "0-0",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-26-spain-vs-uruguay",
+    "finalScore": "1-0",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-26-belgium-vs-new-zealand",
+    "finalScore": "5-1",
+    "aos": false
+  },
+  {
+    "matchId": "2026-06-26-egypt-vs-iran",
+    "finalScore": "1-1",
+    "aos": false
   }
 ]
