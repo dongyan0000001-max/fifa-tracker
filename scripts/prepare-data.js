@@ -66,6 +66,14 @@ function isWrongNorwaySenegalMirrorBet(bet) {
 }
 
 function betKey(bet) {
+  if (bet.ticketId) {
+    return [
+      bet.matchId,
+      bet.bettor,
+      bet.ticketId
+    ].join("|");
+  }
+
   return [
     bet.matchId,
     bet.date,
