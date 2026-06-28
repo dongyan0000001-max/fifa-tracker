@@ -3,6 +3,7 @@ const path = require("node:path");
 
 const ROOT_DIR = path.resolve(__dirname, "..");
 const ASSET_PATH = "assets/knockout-stage.svg";
+const STYLE_VERSION = "20260629-group-stage";
 const NAV_HTML = '<nav class="nav"><a class="{index}" href="{base}index.html">Summary</a><a class="{ongoing}" href="{base}ongoing.html">On Going</a><a class="{group}" href="{base}group-stage.html">Group Stage</a></nav>';
 
 postprocess();
@@ -20,6 +21,7 @@ function postprocess() {
     const active = pageKey(relativePath);
 
     html = rewriteNav(html, base, active);
+    html = html.replace(/assets\/style\.css\?v=[^"]+/g, `assets/style.css?v=${STYLE_VERSION}`);
     html = html.replaceAll(`${base}calendar.html`, `${base}index.html`);
     html = html.replaceAll(`${base}completed.html`, `${base}group-stage.html`);
     html = html.replaceAll("Back to Calendar", "Back to Summary");
