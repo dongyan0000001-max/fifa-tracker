@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1240" role="img" aria-labelledby="title desc">
+  <title id="title">2026 FIFA World Cup Knockout Stage</title>
+  <desc id="desc">A clean knockout stage bracket without the ESPN watermark.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f2f5f8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#0b0b0b" flood-opacity=".15"/>
+    </filter>
+    <style>
+      .title{font:900 54px Impact,Arial Black,sans-serif;letter-spacing:1px;fill:#050505}
+      .box{fill:#fff;stroke:#111;stroke-width:4;rx:10;filter:url(#shadow)}
+      .abbr{font:900 24px Impact,Arial Black,sans-serif;fill:#111;text-anchor:middle}
+      .team{font:900 20px Arial Black,Arial,sans-serif;fill:#111;text-anchor:middle}
+      .line{fill:none;stroke:#111;stroke-width:5;stroke-linecap:square;stroke-linejoin:miter}
+      .cup{fill:#d6a83c;stroke:#6f4c10;stroke-width:3}
+      .base{fill:#0b6a4e;stroke:#073d2f;stroke-width:3}
+    </style>
+  </defs>
+  <rect width="1080" height="1240" fill="url(#bg)"/>
+  <path d="M180 185h720M170 995h740M120 250h840M120 920h840" stroke="#dfe5eb" stroke-width="2" opacity=".55"/>
+  <text class="title" x="540" y="78" text-anchor="middle">2026 FIFA WORLD CUP</text>
+  <text class="title" x="540" y="138" text-anchor="middle">KNOCKOUT STAGE</text>
+  <path d="M432 174h216" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+
+  <g transform="translate(500 465)">
+    <ellipse class="cup" cx="40" cy="72" rx="58" ry="74"/>
+    <path class="cup" d="M15 100c-68-16-74-92-32-124 20-15 54-3 42 27-33 2-44 36-10 58 16 10 22 23 0 39z"/>
+    <path class="cup" d="M65 100c68-16 74-92 32-124-20-15-54-3-42 27 33 2 44 36 10 58-16 10-22 23 0 39z"/>
+    <path class="cup" d="M10 140h60l-9 126H19z"/>
+    <rect class="base" x="-2" y="260" width="84" height="28" rx="7"/>
+    <path class="cup" d="M-18 288h116l20 40H-38z"/>
+  </g>
+
+  <g id="left">
+    <g transform="translate(28 210)"><rect class="box" width="188" height="114"/><text class="team" x="62" y="45">GER</text><text class="team" x="126" y="45">PAR</text><text class="abbr" x="62" y="88">GER</text><text class="abbr" x="126" y="88">PAR</text></g>
+    <g transform="translate(28 338)"><rect class="box" width="188" height="114"/><text class="team" x="62" y="45">FRA</text><text class="team" x="126" y="45">SWE</text><text class="abbr" x="62" y="88">FRA</text><text class="abbr" x="126" y="88">SWE</text></g>
+    <g transform="translate(28 466)"><rect class="box" width="188" height="114"/><text class="team" x="62" y="45">RSA</text><text class="team" x="126" y="45">CAN</text><text class="abbr" x="62" y="88">RSA</text><text class="abbr" x="126" y="88">CAN</text></g>
+    <g transform="translate(28 594)"><rect class="box" width="188" height="114"/><text class="team" x="62" y="45">NED</text><text class="team" x="126" y="45">MAR</text><text class="abbr" x="62" y="88">NED</text><text class="abbr" x="126" y="88">MAR</text></g>
+    <g transform="translate(28 722)"><rect class="box" width="188" height="114"/><text class="team" x="62" y="45">POR</text><text class="team" x="126" y="45">CRO</text><text class="abbr" x="62" y="88">POR</text><text class="abbr" x="126" y="88">CRO</text></g>
+    <g transform="translate(28 850)"><rect class="box" width="188" height="114"/><text class="team" x="62" y="45">ESP</text><text class="team" x="126" y="45">AUT</text><text class="abbr" x="62" y="88">ESP</text><text class="abbr" x="126" y="88">AUT</text></g>
+    <g transform="translate(28 978)"><rect class="box" width="188" height="114"/><text class="team" x="62" y="45">USA</text><text class="team" x="126" y="45">BIH</text><text class="abbr" x="62" y="88">USA</text><text class="abbr" x="126" y="88">BIH</text></g>
+    <g transform="translate(28 1106)"><rect class="box" width="188" height="114"/><text class="team" x="62" y="45">BEL</text><text class="team" x="126" y="45">SEN</text><text class="abbr" x="62" y="88">BEL</text><text class="abbr" x="126" y="88">SEN</text></g>
+  </g>
+
+  <g id="right">
+    <g transform="translate(864 210)"><rect class="box" width="188" height="114"/><text class="team" x="62" y="45">BRA</text><text class="team" x="126" y="45">JPN</text><text class="abbr" x="62" y="88">BRA</text><text class="abbr" x="126" y="88">JPN</text></g>
+    <g transform="translate(864 338)"><rect class="box" width="188" height="114"/><text class="team" x="62" y="45">CIV</text><text class="team" x="126" y="45">NOR</text><text class="abbr" x="62" y="88">CIV</text><text class="abbr" x="126" y="88">NOR</text></g>
+    <g transform="translate(864 466)"><rect class="box" width="188" height="114"/><text class="team" x="62" y="45">MEX</text><text class="team" x="126" y="45">ECU</text><text class="abbr" x="62" y="88">MEX</text><text class="abbr" x="126" y="88">ECU</text></g>
+    <g transform="translate(864 594)"><rect class="box" width="188" height="114"/><text class="team" x="62" y="45">ENG</text><text class="team" x="126" y="45">COD</text><text class="abbr" x="62" y="88">ENG</text><text class="abbr" x="126" y="88">COD</text></g>
+    <g transform="translate(864 722)"><rect class="box" width="188" height="114"/><text class="team" x="62" y="45">ARG</text><text class="team" x="126" y="45">CPV</text><text class="abbr" x="62" y="88">ARG</text><text class="abbr" x="126" y="88">CPV</text></g>
+    <g transform="translate(864 850)"><rect class="box" width="188" height="114"/><text class="team" x="62" y="45">AUS</text><text class="team" x="126" y="45">EGY</text><text class="abbr" x="62" y="88">AUS</text><text class="abbr" x="126" y="88">EGY</text></g>
+    <g transform="translate(864 978)"><rect class="box" width="188" height="114"/><text class="team" x="62" y="45">SUI</text><text class="team" x="126" y="45">ALG</text><text class="abbr" x="62" y="88">SUI</text><text class="abbr" x="126" y="88">ALG</text></g>
+    <g transform="translate(864 1106)"><rect class="box" width="188" height="114"/><text class="team" x="62" y="45">COL</text><text class="team" x="126" y="45">GHA</text><text class="abbr" x="62" y="88">COL</text><text class="abbr" x="126" y="88">GHA</text></g>
+  </g>
+
+  <path class="line" d="M216 267h56v64h56M216 395h56v-64M328 331h56v128h52M216 523h56v64h56M216 651h56v-64M328 587h56V459"/>
+  <path class="line" d="M216 779h56v64h56M216 907h56v-64M328 843h56v128h52M216 1035h56v64h56M216 1163h56v-64M328 1099h56V971"/>
+  <path class="line" d="M436 459h70M436 971h70M506 459v512M506 715h-62M506 715h62"/>
+
+  <path class="line" d="M864 267h-56v64h-56M864 395h-56v-64M752 331h-56v128h-52M864 523h-56v64h-56M864 651h-56v-64M752 587h-56V459"/>
+  <path class="line" d="M864 779h-56v64h-56M864 907h-56v-64M752 843h-56v128h-52M864 1035h-56v64h-56M864 1163h-56v-64M752 1099h-56V971"/>
+  <path class="line" d="M644 459h-70M644 971h-70M574 459v512M574 715h62M574 715h-62"/>
+</svg>
