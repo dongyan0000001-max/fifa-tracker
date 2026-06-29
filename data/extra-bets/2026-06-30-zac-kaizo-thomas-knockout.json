@@ -1,0 +1,79 @@
+[
+  {
+    "ticketId": "CS8238696474",
+    "matchId": "2026-06-29-brazil-vs-japan",
+    "date": "2026-06-29",
+    "homeTeam": "Brazil",
+    "awayTeam": "Japan",
+    "bettor": "Zac",
+    "pick": "3-3",
+    "odds": 52,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8238687600",
+    "matchId": "2026-06-29-brazil-vs-japan",
+    "date": "2026-06-29",
+    "homeTeam": "Brazil",
+    "awayTeam": "Japan",
+    "bettor": "Kaizo",
+    "pick": "3-3",
+    "odds": 52,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8238704521",
+    "matchId": "2026-06-29-netherlands-vs-morocco",
+    "date": "2026-06-29",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Morocco",
+    "bettor": "Zac",
+    "pick": "4-2",
+    "odds": 102,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8238704294",
+    "matchId": "2026-06-29-netherlands-vs-morocco",
+    "date": "2026-06-29",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Morocco",
+    "bettor": "Kaizo",
+    "pick": "4-2",
+    "odds": 102,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8238700086",
+    "matchId": "2026-06-29-brazil-vs-japan",
+    "date": "2026-06-29",
+    "homeTeam": "Brazil",
+    "awayTeam": "Japan",
+    "bettor": "Thomas",
+    "pick": "2-2",
+    "odds": 17,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8238699739",
+    "matchId": "2026-06-29-brazil-vs-japan",
+    "date": "2026-06-29",
+    "homeTeam": "Brazil",
+    "awayTeam": "Japan",
+    "bettor": "Thomas",
+    "pick": "3-4",
+    "odds": 235,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8238699408",
+    "matchId": "2026-06-29-brazil-vs-japan",
+    "date": "2026-06-29",
+    "homeTeam": "Brazil",
+    "awayTeam": "Japan",
+    "bettor": "Thomas",
+    "pick": "4-3",
+    "odds": 131,
+    "stake": 5
+  }
+]
