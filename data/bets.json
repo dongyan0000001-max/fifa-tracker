@@ -4273,5 +4273,71 @@
     "pick": "2-1",
     "odds": 9.2,
     "stake": 5
+  },
+  {
+    "ticketId": "CS8238449307",
+    "matchId": "2026-06-29-brazil-vs-japan",
+    "date": "2026-06-29",
+    "homeTeam": "Brazil",
+    "awayTeam": "Japan",
+    "bettor": "Kaizo",
+    "pick": "2-3",
+    "odds": 50,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8238449010",
+    "matchId": "2026-06-29-brazil-vs-japan",
+    "date": "2026-06-29",
+    "homeTeam": "Brazil",
+    "awayTeam": "Japan",
+    "bettor": "Kaizo",
+    "pick": "3-2",
+    "odds": 29,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8238446395",
+    "matchId": "2026-06-29-brazil-vs-japan",
+    "date": "2026-06-29",
+    "homeTeam": "Brazil",
+    "awayTeam": "Japan",
+    "bettor": "Kaizo",
+    "pick": "2-2",
+    "odds": 17,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8238446127",
+    "matchId": "2026-06-29-brazil-vs-japan",
+    "date": "2026-06-29",
+    "homeTeam": "Brazil",
+    "awayTeam": "Japan",
+    "bettor": "Kaizo",
+    "pick": "1-1",
+    "odds": 6.6,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8238381480",
+    "matchId": "2026-06-29-brazil-vs-japan",
+    "date": "2026-06-29",
+    "homeTeam": "Brazil",
+    "awayTeam": "Japan",
+    "bettor": "Kaizo",
+    "pick": "1-2",
+    "odds": 16,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8238381171",
+    "matchId": "2026-06-29-brazil-vs-japan",
+    "date": "2026-06-29",
+    "homeTeam": "Brazil",
+    "awayTeam": "Japan",
+    "bettor": "Kaizo",
+    "pick": "2-1",
+    "odds": 8.5,
+    "stake": 10
   }
 ]
