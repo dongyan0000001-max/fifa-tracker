@@ -4339,5 +4339,137 @@
     "pick": "2-1",
     "odds": 8.5,
     "stake": 10
+  },
+  {
+    "ticketId": "CS8238508890",
+    "matchId": "2026-06-29-netherlands-vs-morocco",
+    "date": "2026-06-29",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Morocco",
+    "bettor": "URIS",
+    "pick": "1-2",
+    "odds": 11,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8238508581",
+    "matchId": "2026-06-29-netherlands-vs-morocco",
+    "date": "2026-06-29",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Morocco",
+    "bettor": "URIS",
+    "pick": "2-1",
+    "odds": 9.6,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8238507496",
+    "matchId": "2026-06-29-netherlands-vs-morocco",
+    "date": "2026-06-29",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Morocco",
+    "bettor": "URIS",
+    "pick": "0-0",
+    "odds": 8.8,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8238506824",
+    "matchId": "2026-06-29-germany-vs-paraguay",
+    "date": "2026-06-29",
+    "homeTeam": "Germany",
+    "awayTeam": "Paraguay",
+    "bettor": "URIS",
+    "pick": "3-0",
+    "odds": 8.9,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8238506521",
+    "matchId": "2026-06-29-germany-vs-paraguay",
+    "date": "2026-06-29",
+    "homeTeam": "Germany",
+    "awayTeam": "Paraguay",
+    "bettor": "URIS",
+    "pick": "1-0",
+    "odds": 7.5,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8238506272",
+    "matchId": "2026-06-29-germany-vs-paraguay",
+    "date": "2026-06-29",
+    "homeTeam": "Germany",
+    "awayTeam": "Paraguay",
+    "bettor": "URIS",
+    "pick": "2-0",
+    "odds": 6.3,
+    "stake": 5
+  },
+  {
+    "ticketId": "HDP8238506042",
+    "matchId": "2026-06-29-germany-vs-paraguay",
+    "date": "2026-06-29",
+    "homeTeam": "Germany",
+    "awayTeam": "Paraguay",
+    "bettor": "URIS",
+    "pick": "Germany -1.5 (MY -0.86)",
+    "odds": 1.86,
+    "stake": 200
+  },
+  {
+    "ticketId": "X8238504840",
+    "matchId": "2026-06-29-brazil-vs-japan",
+    "date": "2026-06-29",
+    "homeTeam": "Brazil",
+    "awayTeam": "Japan",
+    "bettor": "URIS",
+    "pick": "Draw",
+    "odds": 3.5,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8238504480",
+    "matchId": "2026-06-29-brazil-vs-japan",
+    "date": "2026-06-29",
+    "homeTeam": "Brazil",
+    "awayTeam": "Japan",
+    "bettor": "URIS",
+    "pick": "AOS",
+    "odds": 37,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8238504244",
+    "matchId": "2026-06-29-brazil-vs-japan",
+    "date": "2026-06-29",
+    "homeTeam": "Brazil",
+    "awayTeam": "Japan",
+    "bettor": "URIS",
+    "pick": "3-4",
+    "odds": 235,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8238504086",
+    "matchId": "2026-06-29-brazil-vs-japan",
+    "date": "2026-06-29",
+    "homeTeam": "Brazil",
+    "awayTeam": "Japan",
+    "bettor": "URIS",
+    "pick": "4-3",
+    "odds": 140,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8238503830",
+    "matchId": "2026-06-29-brazil-vs-japan",
+    "date": "2026-06-29",
+    "homeTeam": "Brazil",
+    "awayTeam": "Japan",
+    "bettor": "URIS",
+    "pick": "3-3",
+    "odds": 58,
+    "stake": 5
   }
 ]
