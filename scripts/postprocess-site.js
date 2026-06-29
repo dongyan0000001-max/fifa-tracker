@@ -5,6 +5,11 @@ const ROOT_DIR = path.resolve(__dirname, "..");
 const ASSET_PATH = "assets/knockout-stage.svg";
 const STYLE_VERSION = "20260629-knockout";
 const NAV_HTML = '<nav class="nav"><a class="{index}" href="{base}index.html">Summary</a><a class="{ongoing}" href="{base}ongoing.html">Knockout Stage</a><a class="{group}" href="{base}group-stage.html">Group Stage (Completed)</a></nav>';
+const PODIUM_PORTRAITS = {
+  Eric: "assets/podium/eric.jpg",
+  Thomas: "assets/podium/thomas.jpg",
+  URIS: "assets/podium/uris.jpg",
+};
 
 postprocess();
 
@@ -117,8 +122,13 @@ function renderPodium(leaders) {
 }
 
 function renderPodiumPlace(bettor, place) {
+  const portrait = PODIUM_PORTRAITS[bettor.name];
+  const portraitMarkup = portrait
+    ? `<img src="${portrait}" alt="${escapeHtml(bettor.name)}">`
+    : `<span>${escapeHtml(bettor.name.slice(0, 1))}</span>`;
+
   return `<a class="podium-card podium-${place}" href="${bettor.href}">
-    <div class="podium-portrait"><span>${escapeHtml(bettor.name.slice(0, 1))}</span></div>
+    <div class="podium-portrait">${portraitMarkup}</div>
     <b>${bettor.name}</b>
     <strong class="${toneClass(bettor.net)}">${bettor.netText}</strong>
     <div class="podium-block"><span>${place}</span></div>
