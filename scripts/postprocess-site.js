@@ -133,6 +133,8 @@ function rewriteKnockoutStage(html) {
 
 function rewriteGroupStage(html) {
   return html
+    .replace(/<title>FIFA 2026 (?:Completed|Group Stage)(?: \(Completed\))?<\/title>/, "<title>FIFA 2026 Group Stage (Completed)</title>")
+    .replace(/<h2>(?:Completed Matches|Group Stage)(?: \(Completed\))?<\/h2>/, "<h2>Group Stage (Completed)</h2>")
     .replaceAll("Completed Matches", "Group Stage (Completed)")
     .replaceAll("FIFA 2026 Completed", "FIFA 2026 Group Stage (Completed)")
     .replaceAll("completed-cards", "group-stage-cards");
