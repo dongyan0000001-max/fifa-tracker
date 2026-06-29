@@ -1,0 +1,167 @@
+[
+  {
+    "ticketId": "CS8236413206",
+    "matchId": "2026-06-28-canada-vs-south-africa",
+    "date": "2026-06-28",
+    "homeTeam": "Canada",
+    "awayTeam": "South Africa",
+    "bettor": "Thomas",
+    "pick": "3-3",
+    "odds": 85,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8236413058",
+    "matchId": "2026-06-28-canada-vs-south-africa",
+    "date": "2026-06-28",
+    "homeTeam": "Canada",
+    "awayTeam": "South Africa",
+    "bettor": "Thomas",
+    "pick": "2-2",
+    "odds": 22,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8236412717",
+    "matchId": "2026-06-28-canada-vs-south-africa",
+    "date": "2026-06-28",
+    "homeTeam": "Canada",
+    "awayTeam": "South Africa",
+    "bettor": "Thomas",
+    "pick": "4-3",
+    "odds": 168,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8236412553",
+    "matchId": "2026-06-28-canada-vs-south-africa",
+    "date": "2026-06-28",
+    "homeTeam": "Canada",
+    "awayTeam": "South Africa",
+    "bettor": "Thomas",
+    "pick": "4-2",
+    "odds": 88,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8236416234",
+    "matchId": "2026-06-28-canada-vs-south-africa",
+    "date": "2026-06-28",
+    "homeTeam": "Canada",
+    "awayTeam": "South Africa",
+    "bettor": "Zac",
+    "pick": "2-2",
+    "odds": 22,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8236416042",
+    "matchId": "2026-06-28-canada-vs-south-africa",
+    "date": "2026-06-28",
+    "homeTeam": "Canada",
+    "awayTeam": "South Africa",
+    "bettor": "Zac",
+    "pick": "1-1",
+    "odds": 6.6,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8236415682",
+    "matchId": "2026-06-28-canada-vs-south-africa",
+    "date": "2026-06-28",
+    "homeTeam": "Canada",
+    "awayTeam": "South Africa",
+    "bettor": "Zac",
+    "pick": "2-1",
+    "odds": 8.5,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8236415414",
+    "matchId": "2026-06-28-canada-vs-south-africa",
+    "date": "2026-06-28",
+    "homeTeam": "Canada",
+    "awayTeam": "South Africa",
+    "bettor": "Zac",
+    "pick": "2-0",
+    "odds": 6.4,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8236415206",
+    "matchId": "2026-06-28-canada-vs-south-africa",
+    "date": "2026-06-28",
+    "homeTeam": "Canada",
+    "awayTeam": "South Africa",
+    "bettor": "Zac",
+    "pick": "1-0",
+    "odds": 5.7,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8236420569",
+    "matchId": "2026-06-28-canada-vs-south-africa",
+    "date": "2026-06-28",
+    "homeTeam": "Canada",
+    "awayTeam": "South Africa",
+    "bettor": "Kaizo",
+    "pick": "1-0",
+    "odds": 5.7,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8236420452",
+    "matchId": "2026-06-28-canada-vs-south-africa",
+    "date": "2026-06-28",
+    "homeTeam": "Canada",
+    "awayTeam": "South Africa",
+    "bettor": "Kaizo",
+    "pick": "3-3",
+    "odds": 85,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8236420335",
+    "matchId": "2026-06-28-canada-vs-south-africa",
+    "date": "2026-06-28",
+    "homeTeam": "Canada",
+    "awayTeam": "South Africa",
+    "bettor": "Kaizo",
+    "pick": "2-2",
+    "odds": 22,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8236420143",
+    "matchId": "2026-06-28-canada-vs-south-africa",
+    "date": "2026-06-28",
+    "homeTeam": "Canada",
+    "awayTeam": "South Africa",
+    "bettor": "Kaizo",
+    "pick": "1-1",
+    "odds": 6.6,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8236419957",
+    "matchId": "2026-06-28-canada-vs-south-africa",
+    "date": "2026-06-28",
+    "homeTeam": "Canada",
+    "awayTeam": "South Africa",
+    "bettor": "Kaizo",
+    "pick": "1-2",
+    "odds": 19,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8236419682",
+    "matchId": "2026-06-28-canada-vs-south-africa",
+    "date": "2026-06-28",
+    "homeTeam": "Canada",
+    "awayTeam": "South Africa",
+    "bettor": "Kaizo",
+    "pick": "2-1",
+    "odds": 8.2,
+    "stake": 5
+  }
+]

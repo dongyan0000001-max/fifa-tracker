@@ -3,8 +3,8 @@ const path = require("node:path");
 
 const ROOT_DIR = path.resolve(__dirname, "..");
 const ASSET_PATH = "assets/knockout-stage.svg";
-const STYLE_VERSION = "20260629-podium";
-const NAV_HTML = '<nav class="nav"><a class="{index}" href="{base}index.html">Summary</a><a class="{ongoing}" href="{base}ongoing.html">On Going</a><a class="{group}" href="{base}group-stage.html">Group Stage</a></nav>';
+const STYLE_VERSION = "20260629-knockout";
+const NAV_HTML = '<nav class="nav"><a class="{index}" href="{base}index.html">Summary</a><a class="{ongoing}" href="{base}ongoing.html">Knockout Stage</a><a class="{group}" href="{base}group-stage.html">Group Stage (Completed)</a></nav>';
 
 postprocess();
 
@@ -25,9 +25,10 @@ function postprocess() {
     html = html.replaceAll(`${base}calendar.html`, `${base}index.html`);
     html = html.replaceAll(`${base}completed.html`, `${base}group-stage.html`);
     html = html.replaceAll("Back to Calendar", "Back to Summary");
-    html = html.replaceAll("Back to Completed", "Back to Group Stage");
+    html = html.replaceAll("Back to Completed", "Back to Group Stage (Completed)");
 
     if (relativePath === "index.html") html = rewriteSummary(html);
+    if (relativePath === "ongoing.html") html = rewriteKnockoutStage(html);
     if (relativePath === "group-stage.html") html = rewriteGroupStage(html);
 
     write(filePath, html);
@@ -124,10 +125,16 @@ function renderPodiumPlace(bettor, place) {
   </a>`;
 }
 
+function rewriteKnockoutStage(html) {
+  return html
+    .replaceAll("On Going Matches", "Knockout Stage")
+    .replaceAll("FIFA 2026 On Going Matches", "FIFA 2026 Knockout Stage");
+}
+
 function rewriteGroupStage(html) {
   return html
-    .replaceAll("Completed Matches", "Group Stage")
-    .replaceAll("FIFA 2026 Completed", "FIFA 2026 Group Stage")
+    .replaceAll("Completed Matches", "Group Stage (Completed)")
+    .replaceAll("FIFA 2026 Completed", "FIFA 2026 Group Stage (Completed)")
     .replaceAll("completed-cards", "group-stage-cards");
 }
 
