@@ -4,7 +4,7 @@ const path = require("node:path");
 const ROOT_DIR = path.resolve(__dirname, "..");
 const ASSET_PATH = "assets/knockout-stage.svg";
 const STYLE_VERSION = "20260629-knockout";
-const NAV_HTML = '<nav class="nav"><a class="{index}" href="{base}index.html">Summary</a><a class="{ongoing}" href="{base}ongoing.html">Knockout Stage</a><a class="{group}" href="{base}group-stage.html">Group Stage (Completed)</a></nav>';
+const NAV_HTML = '<nav class="nav"><a class="{index}" href="{base}index.html">Summary</a><a class="{ongoing}" href="{base}ongoing.html">Knockout Stage</a><a class="{group}" href="{base}group-stage.html">Group Stage</a></nav>';
 const PODIUM_PORTRAITS = {
   Eric: "assets/podium/eric.jpg",
   Thomas: "assets/podium/thomas.jpg",
@@ -30,7 +30,7 @@ function postprocess() {
     html = html.replaceAll(`${base}calendar.html`, `${base}index.html`);
     html = html.replaceAll(`${base}completed.html`, `${base}group-stage.html`);
     html = html.replaceAll("Back to Calendar", "Back to Summary");
-    html = html.replaceAll("Back to Completed", "Back to Group Stage (Completed)");
+    html = html.replaceAll("Back to Completed", "Back to Group Stage");
 
     if (relativePath === "index.html") html = rewriteSummary(html);
     if (relativePath === "ongoing.html") html = rewriteKnockoutStage(html);
@@ -143,10 +143,11 @@ function rewriteKnockoutStage(html) {
 
 function rewriteGroupStage(html) {
   return html
-    .replace(/<title>FIFA 2026 (?:Completed|Group Stage)(?: \(Completed\))?<\/title>/, "<title>FIFA 2026 Group Stage (Completed)</title>")
-    .replace(/<h2>(?:Completed Matches|Group Stage)(?: \(Completed\))?<\/h2>/, "<h2>Group Stage (Completed)</h2>")
-    .replaceAll("Completed Matches", "Group Stage (Completed)")
-    .replaceAll("FIFA 2026 Completed", "FIFA 2026 Group Stage (Completed)")
+    .replace(/<title>FIFA 2026 (?:Completed|Group Stage)(?: \(Completed\))?<\/title>/, "<title>FIFA 2026 Group Stage</title>")
+    .replace(/<h2>(?:Completed Matches|Group Stage)(?: \(Completed\))?<\/h2>/, "<h2>Group Stage</h2>")
+    .replaceAll("Completed Matches", "Group Stage")
+    .replaceAll("Group Stage (Completed)", "Group Stage")
+    .replaceAll("FIFA 2026 Completed", "FIFA 2026 Group Stage")
     .replaceAll("completed-cards", "group-stage-cards");
 }
 

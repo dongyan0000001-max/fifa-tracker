@@ -5,6 +5,7 @@ const ROOT_DIR = path.resolve(__dirname, "..");
 const DATA_DIR = path.join(ROOT_DIR, "data");
 const MATCHES_DIR = path.join(ROOT_DIR, "matches");
 const BETTORS_DIR = path.join(ROOT_DIR, "bettors");
+const KNOCKOUT_START_DATE = "2026-06-28";
 const BETTOR_ORDER = ["Kaizo", "Thomas", "Zac", "Eric", "URIS"];
 const FIFA_2026_LOGO_URL = "https://pub-3bd35431294c47068cbf31a95d572166.r2.dev/logos/fifa-world-cup-2026/fifa-world-cup-2026-logo-footylogos.png";
 const STYLE_VERSION = "20260625-mobile-fit";
@@ -79,8 +80,8 @@ function build() {
 
   writePage("index.html", renderIndexPage());
   writePage("calendar.html", renderCalendarPage());
-  writePage("completed.html", renderMatchListPage("Completed Matches", "completed", completedMatches()));
-  writePage("ongoing.html", renderMatchListPage("On Going Matches", "ongoing", ongoingMatches()));
+  writePage("completed.html", renderMatchListPage("Completed Matches", "completed", groupStageCompletedMatches()));
+  writePage("ongoing.html", renderMatchListPage("On Going Matches", "ongoing", knockoutStageMatches()));
 
   for (const match of matches) writePage(path.join("matches", match.fileName), renderMatchPage(match));
   for (const bettor of bettorSummary(allSettledBets())) writePage(path.join("bettors", bettor.fileName), renderBettorPage(bettor));
@@ -134,6 +135,9 @@ function validateBet(bet, index) {
 
 function completedMatches() { return matches.filter((match) => resultsByMatch.has(match.id)); }
 function ongoingMatches() { return matches.filter((match) => !resultsByMatch.has(match.id)); }
+function isKnockoutMatch(match) { return match.date >= KNOCKOUT_START_DATE; }
+function groupStageCompletedMatches() { return completedMatches().filter((match) => !isKnockoutMatch(match)); }
+function knockoutStageMatches() { return matches.filter(isKnockoutMatch); }
 
 function matchStats(match) {
   const result = resultsByMatch.get(match.id);
