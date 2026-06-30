@@ -163,12 +163,27 @@ function settleBet(bet, result, match) {
   const potentialPayout = roundMoney(bet.stake * bet.odds);
   if (!result) return { ...bet, status: "Pending", displayPayout: potentialPayout, actualPayout: 0, net: roundMoney(-bet.stake) };
 
+  const manual = manualSettlementForBet(bet);
+  if (manual) return { ...bet, ...manual };
+
   const settlement = settleSpecialBet(bet, result, match);
   if (settlement) return { ...bet, ...settlement };
 
   const won = bet.pick === result.finalScore || (bet.pick === "AOS" && result.aos === true) || isSpecialWinningBet(bet, result);
   const actualPayout = won ? potentialPayout : 0;
   return { ...bet, status: won ? "Win" : "Lose", displayPayout: actualPayout, actualPayout, net: roundMoney(won ? actualPayout - bet.stake : -bet.stake) };
+}
+
+function manualSettlementForBet(bet) {
+  const manual = bet.manualSettlement;
+  if (!manual) return null;
+
+  return {
+    status: manual.status || "Settled",
+    displayPayout: Number(manual.displayPayout) || 0,
+    actualPayout: Number(manual.actualPayout) || 0,
+    net: roundMoney(Number(manual.net) || 0)
+  };
 }
 
 function settleSpecialBet(bet, result, match) {
