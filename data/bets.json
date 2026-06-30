@@ -5270,5 +5270,181 @@
     "pick": "1-0",
     "odds": 7.9,
     "stake": 10
+  },
+  {
+    "ticketId": "CS8242065272",
+    "matchId": "2026-06-30-france-vs-sweden",
+    "date": "2026-06-30",
+    "homeTeam": "France",
+    "awayTeam": "Sweden",
+    "bettor": "Kaizo",
+    "pick": "4-1",
+    "odds": 15,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8242057288",
+    "matchId": "2026-06-30-france-vs-sweden",
+    "date": "2026-06-30",
+    "homeTeam": "France",
+    "awayTeam": "Sweden",
+    "bettor": "Kaizo",
+    "pick": "AOS",
+    "odds": 6.4,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8242056824",
+    "matchId": "2026-06-30-france-vs-sweden",
+    "date": "2026-06-30",
+    "homeTeam": "France",
+    "awayTeam": "Sweden",
+    "bettor": "Kaizo",
+    "pick": "4-4",
+    "odds": 300,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8242055840",
+    "matchId": "2026-06-30-france-vs-sweden",
+    "date": "2026-06-30",
+    "homeTeam": "France",
+    "awayTeam": "Sweden",
+    "bettor": "Kaizo",
+    "pick": "2-2",
+    "odds": 20,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8242055133",
+    "matchId": "2026-06-30-france-vs-sweden",
+    "date": "2026-06-30",
+    "homeTeam": "France",
+    "awayTeam": "Sweden",
+    "bettor": "Kaizo",
+    "pick": "1-1",
+    "odds": 12,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8242053682",
+    "matchId": "2026-06-30-france-vs-sweden",
+    "date": "2026-06-30",
+    "homeTeam": "France",
+    "awayTeam": "Sweden",
+    "bettor": "Kaizo",
+    "pick": "3-3",
+    "odds": 68,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8242052979",
+    "matchId": "2026-06-30-france-vs-sweden",
+    "date": "2026-06-30",
+    "homeTeam": "France",
+    "awayTeam": "Sweden",
+    "bettor": "Kaizo",
+    "pick": "2-1",
+    "odds": 8.2,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8242052648",
+    "matchId": "2026-06-30-france-vs-sweden",
+    "date": "2026-06-30",
+    "homeTeam": "France",
+    "awayTeam": "Sweden",
+    "bettor": "Kaizo",
+    "pick": "2-0",
+    "odds": 7.3,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8242052086",
+    "matchId": "2026-06-30-france-vs-sweden",
+    "date": "2026-06-30",
+    "homeTeam": "France",
+    "awayTeam": "Sweden",
+    "bettor": "Kaizo",
+    "pick": "3-2",
+    "odds": 23,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8242051698",
+    "matchId": "2026-06-30-france-vs-sweden",
+    "date": "2026-06-30",
+    "homeTeam": "France",
+    "awayTeam": "Sweden",
+    "bettor": "Kaizo",
+    "pick": "3-1",
+    "odds": 8.9,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8242050890",
+    "matchId": "2026-06-30-france-vs-sweden",
+    "date": "2026-06-30",
+    "homeTeam": "France",
+    "awayTeam": "Sweden",
+    "bettor": "Kaizo",
+    "pick": "4-3",
+    "odds": 118,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8242084515",
+    "matchId": "2026-06-30-mexico-vs-ecuador",
+    "date": "2026-06-30",
+    "homeTeam": "Mexico",
+    "awayTeam": "Ecuador",
+    "bettor": "Kaizo",
+    "pick": "2-2",
+    "odds": 25,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8242084206",
+    "matchId": "2026-06-30-mexico-vs-ecuador",
+    "date": "2026-06-30",
+    "homeTeam": "Mexico",
+    "awayTeam": "Ecuador",
+    "bettor": "Kaizo",
+    "pick": "1-1",
+    "odds": 6.3,
+    "stake": 20
+  },
+  {
+    "ticketId": "CS8242083802",
+    "matchId": "2026-06-30-mexico-vs-ecuador",
+    "date": "2026-06-30",
+    "homeTeam": "Mexico",
+    "awayTeam": "Ecuador",
+    "bettor": "Kaizo",
+    "pick": "2-1",
+    "odds": 9.9,
+    "stake": 20
+  },
+  {
+    "ticketId": "CS8242083480",
+    "matchId": "2026-06-30-mexico-vs-ecuador",
+    "date": "2026-06-30",
+    "homeTeam": "Mexico",
+    "awayTeam": "Ecuador",
+    "bettor": "Kaizo",
+    "pick": "2-0",
+    "odds": 9.2,
+    "stake": 20
+  },
+  {
+    "ticketId": "CS8242083070",
+    "matchId": "2026-06-30-mexico-vs-ecuador",
+    "date": "2026-06-30",
+    "homeTeam": "Mexico",
+    "awayTeam": "Ecuador",
+    "bettor": "Kaizo",
+    "pick": "1-0",
+    "odds": 5,
+    "stake": 20
   }
 ]
