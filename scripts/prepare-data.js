@@ -6,8 +6,38 @@ const DATA_DIR = path.join(ROOT_DIR, "data");
 const EXTRA_BETS_DIR = path.join(DATA_DIR, "extra-bets");
 const BUILD_SITE_PATH = path.join(__dirname, "build-site.js");
 
+patchResults();
 mergeExtraBets();
 patchBettorOrder();
+
+function patchResults() {
+  const resultsPath = path.join(DATA_DIR, "results.json");
+  const results = JSON.parse(fs.readFileSync(resultsPath, "utf8"));
+  const patches = [
+    {
+      matchId: "2026-06-30-france-vs-sweden",
+      finalScore: "3-0",
+      aos: false
+    }
+  ];
+  let changed = false;
+
+  for (const patch of patches) {
+    const index = results.findIndex((result) => result.matchId === patch.matchId);
+    if (index === -1) {
+      results.push(patch);
+      changed = true;
+    } else if (JSON.stringify(results[index]) !== JSON.stringify(patch)) {
+      results[index] = patch;
+      changed = true;
+    }
+  }
+
+  if (changed) {
+    fs.writeFileSync(resultsPath, JSON.stringify(results, null, 2) + "\n");
+    console.log("Patched latest match results.");
+  }
+}
 
 function mergeExtraBets() {
   const betsPath = path.join(DATA_DIR, "bets.json");
