@@ -17,7 +17,10 @@ function mergeExtraBets() {
     !isWrongNorwaySenegalMirrorBet(bet)
   ));
   const allBets = [...correctedBaseBets];
-  const seen = new Set(correctedBaseBets.map(betKey));
+  const indexByKey = new Map();
+  correctedBaseBets.forEach((bet, index) => {
+    indexByKey.set(betKey(bet), index);
+  });
 
   if (fs.existsSync(EXTRA_BETS_DIR)) {
     for (const fileName of fs.readdirSync(EXTRA_BETS_DIR).sort()) {
@@ -29,9 +32,11 @@ function mergeExtraBets() {
       }
       for (const bet of extraBets) {
         const key = betKey(bet);
-        if (!seen.has(key)) {
+        if (indexByKey.has(key)) {
+          allBets[indexByKey.get(key)] = bet;
+        } else {
+          indexByKey.set(key, allBets.length);
           allBets.push(bet);
-          seen.add(key);
         }
       }
     }

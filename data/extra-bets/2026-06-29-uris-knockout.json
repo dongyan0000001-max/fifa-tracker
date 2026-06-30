@@ -74,7 +74,13 @@
     "bettor": "URIS",
     "pick": "Germany -1.5 (MY -0.86)",
     "odds": 1.86,
-    "stake": 200
+    "stake": 200,
+    "manualSettlement": {
+      "status": "Lose",
+      "displayPayout": 0,
+      "actualPayout": 0,
+      "net": -172
+    }
   },
   {
     "ticketId": "X8238504840",
