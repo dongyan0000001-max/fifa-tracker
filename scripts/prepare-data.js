@@ -30,7 +30,8 @@ function mergeExtraBets() {
       if (!Array.isArray(extraBets)) {
         throw new Error(`${fileName} must contain a JSON array of bet entries.`);
       }
-      for (const bet of extraBets) {
+      for (const rawBet of extraBets) {
+        const bet = withManualSettlements(rawBet);
         const key = betKey(bet);
         if (indexByKey.has(key)) {
           allBets[indexByKey.get(key)] = bet;
@@ -44,6 +45,22 @@ function mergeExtraBets() {
 
   fs.writeFileSync(betsPath, JSON.stringify(allBets, null, 2) + "\n");
   console.log(`Prepared ${allBets.length} total betting entries.`);
+}
+
+function withManualSettlements(bet) {
+  if (bet.ticketId === "HDP8242002345" && bet.matchId === "2026-06-30-france-vs-sweden") {
+    return {
+      ...bet,
+      manualSettlement: {
+        status: "Win",
+        displayPayout: 184,
+        actualPayout: 184,
+        net: 84
+      }
+    };
+  }
+
+  return bet;
 }
 
 function isWrongPortugalUrisBet(bet) {
