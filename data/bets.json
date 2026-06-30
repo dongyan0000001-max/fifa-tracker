@@ -5027,7 +5027,13 @@
     "bettor": "Thomas",
     "pick": "France -1.5 (MY 0.84)",
     "odds": 1.84,
-    "stake": 100
+    "stake": 100,
+    "manualSettlement": {
+      "status": "Win",
+      "displayPayout": 184,
+      "actualPayout": 184,
+      "net": 84
+    }
   },
   {
     "ticketId": "CS8242028717",
