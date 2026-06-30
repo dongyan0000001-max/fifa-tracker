@@ -4415,7 +4415,13 @@
     "bettor": "URIS",
     "pick": "Germany -1.5 (MY -0.86)",
     "odds": 1.86,
-    "stake": 200
+    "stake": 200,
+    "manualSettlement": {
+      "status": "Lose",
+      "displayPayout": 0,
+      "actualPayout": 0,
+      "net": -172
+    }
   },
   {
     "ticketId": "X8238504840",
@@ -4784,6 +4790,23 @@
       "displayPayout": 0,
       "actualPayout": 0,
       "net": -170
+    }
+  },
+  {
+    "ticketId": "PEN20260629KAIZO001",
+    "matchId": "2026-06-29-netherlands-vs-morocco",
+    "date": "2026-06-29",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Morocco",
+    "bettor": "Kaizo",
+    "pick": "Netherlands (PEN) HDP",
+    "odds": 1,
+    "stake": 100,
+    "manualSettlement": {
+      "status": "Lose",
+      "displayPayout": 0,
+      "actualPayout": 0,
+      "net": -100
     }
   }
 ]
