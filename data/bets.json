@@ -4768,5 +4768,22 @@
     "pick": "1-1",
     "odds": 6.1,
     "stake": 10
+  },
+  {
+    "ticketId": "HDP8240283878",
+    "matchId": "2026-06-29-netherlands-vs-morocco",
+    "date": "2026-06-29",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Morocco",
+    "bettor": "Kaizo",
+    "pick": "Netherlands 0 (MY -0.85)",
+    "odds": 1.85,
+    "stake": 200,
+    "manualSettlement": {
+      "status": "Lose",
+      "displayPayout": 0,
+      "actualPayout": 0,
+      "net": -170
+    }
   }
 ]
