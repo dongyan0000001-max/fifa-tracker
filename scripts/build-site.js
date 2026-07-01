@@ -231,6 +231,12 @@ function settleSpecialBet(bet, result, match) {
   if (line === -0.25 || line === -0.5 || line === -0.75) {
     return margin > 0 ? winSettlement(bet) : loseSettlement(bet);
   }
+  if (Number.isInteger(line) || Math.abs(line % 1) === 0.5) {
+    const adjustedMargin = margin + line;
+    if (adjustedMargin > 0) return winSettlement(bet);
+    if (adjustedMargin === 0) return pushSettlement(bet);
+    return loseSettlement(bet);
+  }
 
   return null;
 }
