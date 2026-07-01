@@ -5711,5 +5711,115 @@
     "pick": "0-0",
     "odds": 10,
     "stake": 20
+  },
+  {
+    "ticketId": "CS8245039830",
+    "matchId": "2026-07-01-england-vs-dr-congo",
+    "date": "2026-07-01",
+    "homeTeam": "England",
+    "awayTeam": "DR Congo",
+    "bettor": "Kaizo",
+    "pick": "2-2",
+    "odds": 39,
+    "stake": 20
+  },
+  {
+    "ticketId": "CS8245039064",
+    "matchId": "2026-07-01-england-vs-dr-congo",
+    "date": "2026-07-01",
+    "homeTeam": "England",
+    "awayTeam": "DR Congo",
+    "bettor": "Kaizo",
+    "pick": "1-1",
+    "odds": 9.9,
+    "stake": 20
+  },
+  {
+    "ticketId": "CS8245038250",
+    "matchId": "2026-07-01-england-vs-dr-congo",
+    "date": "2026-07-01",
+    "homeTeam": "England",
+    "awayTeam": "DR Congo",
+    "bettor": "Kaizo",
+    "pick": "3-1",
+    "odds": 13,
+    "stake": 20
+  },
+  {
+    "ticketId": "CS8245037616",
+    "matchId": "2026-07-01-england-vs-dr-congo",
+    "date": "2026-07-01",
+    "homeTeam": "England",
+    "awayTeam": "DR Congo",
+    "bettor": "Kaizo",
+    "pick": "2-0",
+    "odds": 4.6,
+    "stake": 20
+  },
+  {
+    "ticketId": "CS8245036616",
+    "matchId": "2026-07-01-england-vs-dr-congo",
+    "date": "2026-07-01",
+    "homeTeam": "England",
+    "awayTeam": "DR Congo",
+    "bettor": "Kaizo",
+    "pick": "1-0",
+    "odds": 4.7,
+    "stake": 20
+  },
+  {
+    "ticketId": "CS8245048597",
+    "matchId": "2026-07-01-england-vs-dr-congo",
+    "date": "2026-07-01",
+    "homeTeam": "England",
+    "awayTeam": "DR Congo",
+    "bettor": "Zac",
+    "pick": "4-0",
+    "odds": 13,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8245048127",
+    "matchId": "2026-07-01-england-vs-dr-congo",
+    "date": "2026-07-01",
+    "homeTeam": "England",
+    "awayTeam": "DR Congo",
+    "bettor": "Zac",
+    "pick": "3-1",
+    "odds": 13,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8245047597",
+    "matchId": "2026-07-01-england-vs-dr-congo",
+    "date": "2026-07-01",
+    "homeTeam": "England",
+    "awayTeam": "DR Congo",
+    "bettor": "Zac",
+    "pick": "3-0",
+    "odds": 6.6,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8245047042",
+    "matchId": "2026-07-01-england-vs-dr-congo",
+    "date": "2026-07-01",
+    "homeTeam": "England",
+    "awayTeam": "DR Congo",
+    "bettor": "Zac",
+    "pick": "2-0",
+    "odds": 4.6,
+    "stake": 10
+  },
+  {
+    "ticketId": "HDP8245046288",
+    "matchId": "2026-07-01-england-vs-dr-congo",
+    "date": "2026-07-01",
+    "homeTeam": "England",
+    "awayTeam": "DR Congo",
+    "bettor": "Zac",
+    "pick": "England -1.5 (MY 0.99)",
+    "odds": 1.99,
+    "stake": 50
   }
 ]
