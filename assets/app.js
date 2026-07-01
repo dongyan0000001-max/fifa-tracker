@@ -3,7 +3,6 @@ responsiveStyle.textContent = `
   :root{--shell-max:100vw}
   html{min-height:100vh;overflow-x:hidden;background:#f2f3f7}
   body{min-height:100vh;min-height:100dvh;overflow-x:hidden;padding:0!important;background:#f2f3f7}
-  body:before{content:"";position:fixed;top:0;left:0;right:0;height:max(env(safe-area-inset-top),0px);background:#f2f3f7;z-index:2147483647;pointer-events:none}
   .app-shell{width:100vw;max-width:none;min-height:100vh;min-height:100dvh;margin:0;border-radius:0!important;box-shadow:none;padding-bottom:0;background-color:#f2f3f7}
   .app-shell:after{position:static!important;display:block;left:auto;bottom:auto;transform:none;width:100vw;height:clamp(14px,3.7vw,18px);margin-top:0}
   @media(min-width:700px){body{padding:0!important}.app-shell{border-radius:0!important}}
