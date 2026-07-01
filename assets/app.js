@@ -1,9 +1,10 @@
 const responsiveStyle = document.createElement("style");
 responsiveStyle.textContent = `
   :root{--shell-max:100vw}
-  html{min-height:100vh;overflow-x:hidden;background:#f2f3f7}
-  body{min-height:100vh;min-height:100dvh;overflow-x:hidden;padding:0!important;background:#f2f3f7}
-  .app-shell{width:100vw;max-width:none;min-height:100vh;min-height:100dvh;margin:0;border-radius:0!important;box-shadow:none;padding-bottom:24px}
+  html{min-height:100vh;overflow-x:hidden;background:#fff}
+  body{min-height:100vh;min-height:100dvh;overflow-x:hidden;padding:0!important;background:#fff}
+  body:before{content:"";position:fixed;top:0;left:0;right:0;height:max(env(safe-area-inset-top),0px);background:#fff;z-index:2147483647;pointer-events:none}
+  .app-shell{width:100vw;max-width:none;min-height:100vh;min-height:100dvh;margin:0;border-radius:0!important;box-shadow:none;padding-bottom:24px;background-color:#f2f3f7}
   .app-shell:after{width:100vw;height:clamp(14px,3.7vw,18px)}
   @media(min-width:700px){body{padding:0!important}.app-shell{border-radius:0!important}}
   .brand-scene{min-height:clamp(136px,35vw,164px);padding:clamp(14px,3.8vw,18px) clamp(20px,5.8vw,30px) 28px clamp(22px,6vw,32px)}
