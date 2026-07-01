@@ -24,6 +24,11 @@ function patchResults() {
       matchId: "2026-06-30-mexico-vs-ecuador",
       finalScore: "2-0",
       aos: false
+    },
+    {
+      matchId: "2026-07-01-england-vs-dr-congo",
+      finalScore: "2-1",
+      aos: false
     }
   ];
   let changed = false;
@@ -92,6 +97,18 @@ function withManualSettlements(bet) {
         displayPayout: 184,
         actualPayout: 184,
         net: 84
+      }
+    };
+  }
+
+  if (bet.ticketId === "HDP8244459420" && bet.matchId === "2026-07-01-england-vs-dr-congo") {
+    return {
+      ...bet,
+      manualSettlement: {
+        status: "Lose",
+        displayPayout: 0,
+        actualPayout: 0,
+        net: -95
       }
     };
   }
