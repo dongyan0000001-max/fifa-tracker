@@ -113,7 +113,7 @@ function renderPodium(leaders) {
   const stageOrder = [leaders[1], leaders[0], leaders[2]].filter(Boolean);
   return `  <section class="panel podium-panel">
     <div class="section-head podium-head">
-      <div><span class="section-icon">🏆</span><h2>Group Stage Podium</h2></div>
+      <div><span class="section-icon">🏆</span><h2>Live-time Rankings</h2></div>
     </div>
     <div class="podium-stage">
       ${stageOrder.map((bettor) => renderPodiumPlace(bettor, leaders.indexOf(bettor) + 1)).join("")}
