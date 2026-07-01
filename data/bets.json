@@ -5628,5 +5628,82 @@
     "pick": "England -1.5 (MY -0.95)",
     "odds": 1.95,
     "stake": 100
+  },
+  {
+    "ticketId": "CS8244484553",
+    "matchId": "2026-07-01-belgium-vs-senegal",
+    "date": "2026-07-01",
+    "homeTeam": "Belgium",
+    "awayTeam": "Senegal",
+    "bettor": "Kaizo",
+    "pick": "1-2",
+    "odds": 11,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8244484329",
+    "matchId": "2026-07-01-belgium-vs-senegal",
+    "date": "2026-07-01",
+    "homeTeam": "Belgium",
+    "awayTeam": "Senegal",
+    "bettor": "Kaizo",
+    "pick": "0-1",
+    "odds": 10,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8244481480",
+    "matchId": "2026-07-01-belgium-vs-senegal",
+    "date": "2026-07-01",
+    "homeTeam": "Belgium",
+    "awayTeam": "Senegal",
+    "bettor": "Kaizo",
+    "pick": "2-0",
+    "odds": 10,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8244481345",
+    "matchId": "2026-07-01-belgium-vs-senegal",
+    "date": "2026-07-01",
+    "homeTeam": "Belgium",
+    "awayTeam": "Senegal",
+    "bettor": "Kaizo",
+    "pick": "2-1",
+    "odds": 8.6,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8244480436",
+    "matchId": "2026-07-01-belgium-vs-senegal",
+    "date": "2026-07-01",
+    "homeTeam": "Belgium",
+    "awayTeam": "Senegal",
+    "bettor": "Kaizo",
+    "pick": "1-0",
+    "odds": 7.5,
+    "stake": 20
+  },
+  {
+    "ticketId": "CS8244480127",
+    "matchId": "2026-07-01-belgium-vs-senegal",
+    "date": "2026-07-01",
+    "homeTeam": "Belgium",
+    "awayTeam": "Senegal",
+    "bettor": "Kaizo",
+    "pick": "1-1",
+    "odds": 6.5,
+    "stake": 20
+  },
+  {
+    "ticketId": "CS8244479802",
+    "matchId": "2026-07-01-belgium-vs-senegal",
+    "date": "2026-07-01",
+    "homeTeam": "Belgium",
+    "awayTeam": "Senegal",
+    "bettor": "Kaizo",
+    "pick": "0-0",
+    "odds": 10,
+    "stake": 20
   }
 ]
