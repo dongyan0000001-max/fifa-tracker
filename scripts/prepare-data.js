@@ -18,6 +18,11 @@ function patchResults() {
       matchId: "2026-06-30-france-vs-sweden",
       finalScore: "3-0",
       aos: false
+    },
+    {
+      matchId: "2026-06-30-mexico-vs-ecuador",
+      finalScore: "2-0",
+      aos: false
     }
   ];
   let changed = false;
