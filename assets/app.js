@@ -16,9 +16,9 @@ responsiveStyle.textContent = `
   main{padding:0 clamp(14px,4.5vw,22px) 76px}
   .kpi-grid{gap:6px}
   .kpi-card{gap:12px;min-height:58px;padding:10px clamp(11px,3.2vw,14px)}
-  .kpi-card b{font-size:clamp(20px,5.8vw,24px)}
-  .kpi-card:nth-child(3) b,.kpi-card:nth-child(4) b{font-size:clamp(18px,5.2vw,22px)}
-  .kpi-card span:last-child{font-size:14px}
+  .kpi-card b{font-size:clamp(18px,5.1vw,22px)}
+  .kpi-card:nth-child(3) b,.kpi-card:nth-child(4) b{font-size:clamp(16px,4.5vw,19px)}
+  .kpi-card span:last-child{font-size:13px}
   .kpi-icon{width:34px;height:34px;font-size:17px}
   .kpi-clipboard:before{left:10px;top:9px;width:12px;height:15px}
   .kpi-clipboard:after{left:15px;top:8px;width:5px}
