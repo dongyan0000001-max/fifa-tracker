@@ -9,6 +9,7 @@ const BUILD_SITE_PATH = path.join(__dirname, "build-site.js");
 patchResults();
 mergeExtraBets();
 patchBettorOrder();
+patchHandicapSettlement();
 
 function patchResults() {
   const resultsPath = path.join(DATA_DIR, "results.json");
@@ -153,5 +154,34 @@ function patchBettorOrder() {
   if (content.includes(previous)) {
     fs.writeFileSync(BUILD_SITE_PATH, content.replace(previous, next));
     console.log("Removed TSL from bettor order.");
+  }
+}
+
+function patchHandicapSettlement() {
+  if (!fs.existsSync(BUILD_SITE_PATH)) return;
+
+  const content = fs.readFileSync(BUILD_SITE_PATH, "utf8");
+  if (content.includes("const adjustedMargin = margin + line;")) return;
+
+  const previous = `  if (line === -0.25 || line === -0.5 || line === -0.75) {
+    return margin > 0 ? winSettlement(bet) : loseSettlement(bet);
+  }
+
+  return null;`;
+  const next = `  if (line === -0.25 || line === -0.5 || line === -0.75) {
+    return margin > 0 ? winSettlement(bet) : loseSettlement(bet);
+  }
+  if (Number.isInteger(line) || Math.abs(line % 1) === 0.5) {
+    const adjustedMargin = margin + line;
+    if (adjustedMargin > 0) return winSettlement(bet);
+    if (adjustedMargin === 0) return pushSettlement(bet);
+    return loseSettlement(bet);
+  }
+
+  return null;`;
+
+  if (content.includes(previous)) {
+    fs.writeFileSync(BUILD_SITE_PATH, content.replace(previous, next));
+    console.log("Patched handicap settlement handling.");
   }
 }
