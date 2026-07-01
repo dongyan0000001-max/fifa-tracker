@@ -5627,7 +5627,13 @@
     "bettor": "Thomas",
     "pick": "England -1.5 (MY -0.95)",
     "odds": 1.95,
-    "stake": 100
+    "stake": 100,
+    "manualSettlement": {
+      "status": "Lose",
+      "displayPayout": 0,
+      "actualPayout": 0,
+      "net": -95
+    }
   },
   {
     "ticketId": "CS8244484553",
