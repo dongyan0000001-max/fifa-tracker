@@ -1,0 +1,178 @@
+[
+  {
+    "ticketId": "CS8244472414",
+    "matchId": "2026-07-01-belgium-vs-senegal",
+    "date": "2026-07-01",
+    "homeTeam": "Belgium",
+    "awayTeam": "Senegal",
+    "bettor": "Thomas",
+    "pick": "1-2",
+    "odds": 11,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8244472250",
+    "matchId": "2026-07-01-belgium-vs-senegal",
+    "date": "2026-07-01",
+    "homeTeam": "Belgium",
+    "awayTeam": "Senegal",
+    "bettor": "Thomas",
+    "pick": "0-1",
+    "odds": 10,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8244471941",
+    "matchId": "2026-07-01-belgium-vs-senegal",
+    "date": "2026-07-01",
+    "homeTeam": "Belgium",
+    "awayTeam": "Senegal",
+    "bettor": "Thomas",
+    "pick": "2-1",
+    "odds": 8.6,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8244471824",
+    "matchId": "2026-07-01-belgium-vs-senegal",
+    "date": "2026-07-01",
+    "homeTeam": "Belgium",
+    "awayTeam": "Senegal",
+    "bettor": "Thomas",
+    "pick": "2-0",
+    "odds": 10,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8244471569",
+    "matchId": "2026-07-01-belgium-vs-senegal",
+    "date": "2026-07-01",
+    "homeTeam": "Belgium",
+    "awayTeam": "Senegal",
+    "bettor": "Thomas",
+    "pick": "1-1",
+    "odds": 6.5,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8244470862",
+    "matchId": "2026-07-01-usa-vs-bosnia-herzegovina",
+    "date": "2026-07-01",
+    "homeTeam": "USA",
+    "awayTeam": "Bosnia Herzegovina",
+    "bettor": "Thomas",
+    "pick": "1-1",
+    "odds": 9.2,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8244470373",
+    "matchId": "2026-07-01-usa-vs-bosnia-herzegovina",
+    "date": "2026-07-01",
+    "homeTeam": "USA",
+    "awayTeam": "Bosnia Herzegovina",
+    "bettor": "Thomas",
+    "pick": "1-2",
+    "odds": 25,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8244470143",
+    "matchId": "2026-07-01-usa-vs-bosnia-herzegovina",
+    "date": "2026-07-01",
+    "homeTeam": "USA",
+    "awayTeam": "Bosnia Herzegovina",
+    "bettor": "Thomas",
+    "pick": "0-1",
+    "odds": 21,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8244461963",
+    "matchId": "2026-07-01-usa-vs-bosnia-herzegovina",
+    "date": "2026-07-01",
+    "homeTeam": "USA",
+    "awayTeam": "Bosnia Herzegovina",
+    "bettor": "Thomas",
+    "pick": "2-1",
+    "odds": 8,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8244461755",
+    "matchId": "2026-07-01-usa-vs-bosnia-herzegovina",
+    "date": "2026-07-01",
+    "homeTeam": "USA",
+    "awayTeam": "Bosnia Herzegovina",
+    "bettor": "Thomas",
+    "pick": "2-0",
+    "odds": 6.7,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8244461537",
+    "matchId": "2026-07-01-usa-vs-bosnia-herzegovina",
+    "date": "2026-07-01",
+    "homeTeam": "USA",
+    "awayTeam": "Bosnia Herzegovina",
+    "bettor": "Thomas",
+    "pick": "1-0",
+    "odds": 7.1,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8244460799",
+    "matchId": "2026-07-01-england-vs-dr-congo",
+    "date": "2026-07-01",
+    "homeTeam": "England",
+    "awayTeam": "DR Congo",
+    "bettor": "Thomas",
+    "pick": "3-1",
+    "odds": 14,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8244460600",
+    "matchId": "2026-07-01-england-vs-dr-congo",
+    "date": "2026-07-01",
+    "homeTeam": "England",
+    "awayTeam": "DR Congo",
+    "bettor": "Thomas",
+    "pick": "3-0",
+    "odds": 7,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8244460187",
+    "matchId": "2026-07-01-england-vs-dr-congo",
+    "date": "2026-07-01",
+    "homeTeam": "England",
+    "awayTeam": "DR Congo",
+    "bettor": "Thomas",
+    "pick": "2-0",
+    "odds": 4.7,
+    "stake": 10
+  },
+  {
+    "ticketId": "CS8244459985",
+    "matchId": "2026-07-01-england-vs-dr-congo",
+    "date": "2026-07-01",
+    "homeTeam": "England",
+    "awayTeam": "DR Congo",
+    "bettor": "Thomas",
+    "pick": "1-0",
+    "odds": 4.8,
+    "stake": 10
+  },
+  {
+    "ticketId": "HDP8244459420",
+    "matchId": "2026-07-01-england-vs-dr-congo",
+    "date": "2026-07-01",
+    "homeTeam": "England",
+    "awayTeam": "DR Congo",
+    "bettor": "Thomas",
+    "pick": "England -1.5 (MY -0.95)",
+    "odds": 1.95,
+    "stake": 100
+  }
+]
