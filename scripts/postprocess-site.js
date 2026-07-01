@@ -63,22 +63,12 @@ function nav(base, active) {
 }
 
 function rewriteSummary(html) {
-  const knockout = `
-  <section class="panel knockout-panel">
-    <img src="${ASSET_PATH}" alt="2026 FIFA World Cup knockout stage bracket">
-  </section>
-`;
-  let output = html
+  const output = html
     .replace(/\n\s*<section class="panel podium-panel">[\s\S]*?<\/section>\n/g, "\n")
-    .replace(/\n\s*<section class="panel fixture-panel">[\s\S]*?<section class="panel selected-panel">[\s\S]*?<\/section>\n/, `\n${knockout}`)
-    .replace(/\n\s*<section class="panel knockout-panel">[\s\S]*?<\/section>\n/g, `\n${knockout}`);
+    .replace(/\n\s*<section class="panel fixture-panel">[\s\S]*?<section class="panel selected-panel">[\s\S]*?<\/section>\n/, "\n")
+    .replace(/\n\s*<section class="panel knockout-panel">[\s\S]*?<\/section>\n/g, "\n");
 
-  output = rewriteStandings(output);
-
-  if (!output.includes("knockout-stage.svg")) {
-    output = output.replace("</main>", `${knockout}</main>`);
-  }
-  return output;
+  return rewriteStandings(output);
 }
 
 function rewriteStandings(html) {
