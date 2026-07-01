@@ -1,11 +1,11 @@
 const responsiveStyle = document.createElement("style");
 responsiveStyle.textContent = `
   :root{--shell-max:100vw}
-  html{min-height:100vh;overflow-x:hidden;background:#fff}
-  body{min-height:100vh;min-height:100dvh;overflow-x:hidden;padding:0!important;background:#fff}
-  body:before{content:"";position:fixed;top:0;left:0;right:0;height:max(env(safe-area-inset-top),0px);background:#fff;z-index:2147483647;pointer-events:none}
-  .app-shell{width:100vw;max-width:none;min-height:100vh;min-height:100dvh;margin:0;border-radius:0!important;box-shadow:none;padding-bottom:24px;background-color:#f2f3f7}
-  .app-shell:after{width:100vw;height:clamp(14px,3.7vw,18px)}
+  html{min-height:100vh;overflow-x:hidden;background:#f2f3f7}
+  body{min-height:100vh;min-height:100dvh;overflow-x:hidden;padding:0!important;background:#f2f3f7}
+  body:before{content:"";position:fixed;top:0;left:0;right:0;height:max(env(safe-area-inset-top),0px);background:#f2f3f7;z-index:2147483647;pointer-events:none}
+  .app-shell{width:100vw;max-width:none;min-height:100vh;min-height:100dvh;margin:0;border-radius:0!important;box-shadow:none;padding-bottom:0;background-color:#f2f3f7}
+  .app-shell:after{position:static!important;display:block;left:auto;bottom:auto;transform:none;width:100vw;height:clamp(14px,3.7vw,18px);margin-top:0}
   @media(min-width:700px){body{padding:0!important}.app-shell{border-radius:0!important}}
   .brand-scene{min-height:clamp(136px,35vw,164px);padding:clamp(14px,3.8vw,18px) clamp(20px,5.8vw,30px) 28px clamp(22px,6vw,32px)}
   .brand{gap:clamp(16px,5vw,24px);padding-right:clamp(76px,19vw,96px)}
@@ -15,7 +15,7 @@ responsiveStyle.textContent = `
   .we-are{right:clamp(20px,6vw,30px);top:clamp(28px,8.3vw,40px);font-size:clamp(25px,6.9vw,31px)}
   .nav{margin:-21px clamp(14px,4.5vw,22px) 8px;min-height:40px;padding:0 clamp(10px,3vw,15px)}
   .nav a{min-height:40px;font-size:clamp(13px,3.45vw,15px)}
-  main{padding:0 clamp(14px,4.5vw,22px) 76px}
+  main{padding:0 clamp(14px,4.5vw,22px) clamp(14px,4vw,22px)}
   .kpi-grid{gap:6px}
   .kpi-card{gap:12px;min-height:58px;padding:10px clamp(11px,3.2vw,14px)}
   .kpi-card b{font-size:clamp(18px,5.1vw,22px)}
@@ -63,7 +63,7 @@ function reorderStandings() {
 }
 
 function applyLivePolish() {
-  setMeta("theme-color", "#ffffff");
+  setMeta("theme-color", "#f2f3f7");
   setMeta("apple-mobile-web-app-status-bar-style", "default");
   reorderStandings();
 }
