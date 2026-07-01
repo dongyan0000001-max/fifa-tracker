@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1240" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 155 1080 1085" role="img" aria-labelledby="title desc">
   <title id="title">2026 FIFA World Cup Knockout Stage</title>
   <desc id="desc">A clean knockout stage bracket.</desc>
   <defs>
@@ -10,7 +10,6 @@
       <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#0b0b0b" flood-opacity=".15"/>
     </filter>
     <style>
-      .title{font:900 54px Impact,Arial Black,sans-serif;letter-spacing:1px;fill:#050505}
       .box{fill:#fff;stroke:#111;stroke-width:4;rx:10;filter:url(#shadow)}
       .abbr{font:900 24px Impact,Arial Black,sans-serif;fill:#111;text-anchor:middle}
       .team{font:900 20px Arial Black,Arial,sans-serif;fill:#111;text-anchor:middle}
@@ -21,9 +20,6 @@
   </defs>
   <rect width="1080" height="1240" fill="url(#bg)"/>
   <path d="M180 185h720M170 995h740M120 250h840M120 920h840" stroke="#dfe5eb" stroke-width="2" opacity=".55"/>
-  <text class="title" x="540" y="78" text-anchor="middle">2026 FIFA WORLD CUP</text>
-  <text class="title" x="540" y="138" text-anchor="middle">KNOCKOUT STAGE</text>
-  <path d="M432 174h216" stroke="#111" stroke-width="5" stroke-linecap="round"/>
 
   <g transform="translate(500 465)">
     <ellipse class="cup" cx="40" cy="72" rx="58" ry="74"/>
