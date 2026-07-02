@@ -34,6 +34,11 @@ function patchResults() {
       matchId: "2026-07-01-belgium-vs-senegal",
       finalScore: "2-2",
       aos: false
+    },
+    {
+      matchId: "2026-07-01-usa-vs-bosnia-herzegovina",
+      finalScore: "2-0",
+      aos: false
     }
   ];
   let changed = false;
