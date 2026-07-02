@@ -5550,7 +5550,7 @@
     "bettor": "Thomas",
     "pick": "2-1",
     "odds": 8,
-    "stake": 10
+    "stake": 5
   },
   {
     "ticketId": "CS8244461755",
@@ -5561,7 +5561,7 @@
     "bettor": "Thomas",
     "pick": "2-0",
     "odds": 6.7,
-    "stake": 10
+    "stake": 5
   },
   {
     "ticketId": "CS8244461537",
@@ -5572,7 +5572,7 @@
     "bettor": "Thomas",
     "pick": "1-0",
     "odds": 7.1,
-    "stake": 10
+    "stake": 5
   },
   {
     "ticketId": "CS8244460799",
@@ -6030,5 +6030,38 @@
     "pick": "USA -1/1.5 (MY 0.81)",
     "odds": 1.81,
     "stake": 200
+  },
+  {
+    "ticketId": "CS8244461963-KAIZO",
+    "matchId": "2026-07-01-usa-vs-bosnia-herzegovina",
+    "date": "2026-07-01",
+    "homeTeam": "USA",
+    "awayTeam": "Bosnia Herzegovina",
+    "bettor": "Kaizo",
+    "pick": "2-1",
+    "odds": 8,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8244461755-KAIZO",
+    "matchId": "2026-07-01-usa-vs-bosnia-herzegovina",
+    "date": "2026-07-01",
+    "homeTeam": "USA",
+    "awayTeam": "Bosnia Herzegovina",
+    "bettor": "Kaizo",
+    "pick": "2-0",
+    "odds": 6.7,
+    "stake": 5
+  },
+  {
+    "ticketId": "CS8244461537-KAIZO",
+    "matchId": "2026-07-01-usa-vs-bosnia-herzegovina",
+    "date": "2026-07-01",
+    "homeTeam": "USA",
+    "awayTeam": "Bosnia Herzegovina",
+    "bettor": "Kaizo",
+    "pick": "1-0",
+    "odds": 7.1,
+    "stake": 5
   }
 ]
