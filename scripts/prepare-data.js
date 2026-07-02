@@ -188,14 +188,14 @@ function patchHandicapSettlement() {
   if (!fs.existsSync(BUILD_SITE_PATH)) return;
 
   const content = fs.readFileSync(BUILD_SITE_PATH, "utf8");
-  if (content.includes("const adjustedMargin = margin + line;")) return;
+  if (content.includes("function settleQuarterHandicapLine(")) return;
 
-  const previous = `  if (line === -0.25 || line === -0.5 || line === -0.75) {
-    return margin > 0 ? winSettlement(bet) : loseSettlement(bet);
+  const previous = `  if (line === -1) {
+    if (margin > 1) return winSettlement(bet);
+    if (margin === 1) return pushSettlement(bet);
+    return loseSettlement(bet);
   }
-
-  return null;`;
-  const next = `  if (line === -0.25 || line === -0.5 || line === -0.75) {
+  if (line === -0.25 || line === -0.5 || line === -0.75) {
     return margin > 0 ? winSettlement(bet) : loseSettlement(bet);
   }
   if (Number.isInteger(line) || Math.abs(line % 1) === 0.5) {
@@ -206,9 +206,75 @@ function patchHandicapSettlement() {
   }
 
   return null;`;
+  const next = `  const quarterSettlement = settleQuarterHandicapLine(bet, margin, line);
+  if (quarterSettlement) return quarterSettlement;
 
-  if (content.includes(previous)) {
-    fs.writeFileSync(BUILD_SITE_PATH, content.replace(previous, next));
+  const singleLineSettlement = settleSingleHandicapLine(bet, margin, line, bet.stake);
+  if (singleLineSettlement) return singleLineSettlement;
+
+  return null;`;
+  const anchor = `function parseScore(scoreText) {`;
+  const helpers = `function settleSingleHandicapLine(bet, margin, line, stake) {
+  if (!isHalfStepLine(line)) return null;
+
+  const adjustedMargin = margin + line;
+  if (adjustedMargin > 0) return winSettlementForStake(bet, stake);
+  if (adjustedMargin === 0) return pushSettlementForStake(stake);
+  return loseSettlementForStake(stake);
+}
+
+function settleQuarterHandicapLine(bet, margin, line) {
+  if (!isQuarterLine(line)) return null;
+
+  const stake = bet.stake / 2;
+  const lowerLine = Math.floor(line * 2) / 2;
+  const upperLine = Math.ceil(line * 2) / 2;
+  const first = settleSingleHandicapLine(bet, margin, lowerLine, stake);
+  const second = settleSingleHandicapLine(bet, margin, upperLine, stake);
+  if (!first || !second) return null;
+
+  const net = roundMoney(first.net + second.net);
+  const actualPayout = roundMoney(first.actualPayout + second.actualPayout);
+  return {
+    status: combinedSettlementStatus(first.status, second.status),
+    displayPayout: actualPayout,
+    actualPayout,
+    net
+  };
+}
+
+function winSettlementForStake(bet, stake) {
+  const actualPayout = roundMoney(stake * bet.odds);
+  return { status: "Win", displayPayout: actualPayout, actualPayout, net: roundMoney(actualPayout - stake) };
+}
+
+function loseSettlementForStake(stake) {
+  return { status: "Lose", displayPayout: 0, actualPayout: 0, net: roundMoney(-stake) };
+}
+
+function pushSettlementForStake(stake) {
+  return { status: "Push", displayPayout: stake, actualPayout: stake, net: 0 };
+}
+
+function isHalfStepLine(line) {
+  return Math.abs(line * 2 - Math.round(line * 2)) < 0.000001;
+}
+
+function isQuarterLine(line) {
+  return Math.abs(line * 4 - Math.round(line * 4)) < 0.000001 && !isHalfStepLine(line);
+}
+
+function combinedSettlementStatus(first, second) {
+  if (first === second) return first;
+  if ((first === "Win" && second === "Push") || (first === "Push" && second === "Win")) return "Half Win";
+  if ((first === "Lose" && second === "Push") || (first === "Push" && second === "Lose")) return "Half Lose";
+  return "Split";
+}
+
+${anchor}`;
+
+  if (content.includes(previous) && content.includes(anchor)) {
+    fs.writeFileSync(BUILD_SITE_PATH, content.replace(previous, next).replace(anchor, helpers));
     console.log("Patched handicap settlement handling.");
   }
 }
